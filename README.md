@@ -1,5 +1,8 @@
 # ohw
 sjtu practice of open source hardware course 2018 spring
+<<<<<<< HEAD
+caicai,and 517030910226
+=======
 
 fyq\517021911110
 hello  i'm 517082910006 gxh
@@ -23,12 +26,9 @@ hello I am wwwwuhongliang 517021911015
 =======
 >>>>>>> a18a1e5623410153bd002e362876bf900102fa16
 =======
-<<<<<<< HEAD
 hello!
 hi! i am wyk 517021910402
 >>>>>>> a18a1e5623410153bd002e362876bf900102fa16
-=======
->>>>>>> c905baa502b764971899ed50d6c45d0e7e79f49e
 >>>>>>> 7368bb066a18b85ec7292a8742c191f54d5ff7fb
 >>>>>>> 6b7c26cfcb1bc90be8e093e5855733a0bf13f007
 >>>>>>> dcf10cdb6aaba1806e0d9cfaa455c663768ea253
