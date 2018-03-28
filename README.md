@@ -1,10 +1,8 @@
 # ohw
 sjtu practice of open source hardware course 2018 spring
 
-<<<<<<< HEAD
 Hello I'm WuFu , 517020910130
 !!!!!!
-=======
 command
 name=zzjfzyz
 517021910305
@@ -28,6 +26,7 @@ liangcw 517020910099;
 lixy 517711910045
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 czh 517030910226
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -45,6 +44,8 @@ hello
 >>>>>>> 9a7bed8622839aa45f1092515fa98a87fe9a4723
 =======
 =======
+=======
+>>>>>>> dbf3ed086ac162314a22bef0c5d6f379f97f6037
 
 
 >>>>>>> 135221f651144f14d9a012f5a2944da517f051de
@@ -54,7 +55,10 @@ Hello,tell me how to use this things
 
 hello I am wwwwuhongliang 517021911015
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> dbf3ed086ac162314a22bef0c5d6f379f97f6037
 =======
 >>>>>>> a18a1e5623410153bd002e362876bf900102fa16
 
@@ -66,6 +70,7 @@ hello I am wwwwuhongliang 517021911015
 
 hello!
 hi! i am wyk 517021910402
+<<<<<<< HEAD
 
 hhhh
 <<<<<<< HEAD
@@ -76,3 +81,6 @@ hhhh
 >>>>>>> 0478a2bd131b064b1e8025ac63af245353ee9475
 =======
 >>>>>>> 135221f651144f14d9a012f5a2944da517f051de
+=======
+>>>>>>> 978790d3f1f81797ecf75b12b1281b0d672174e2
+>>>>>>> dbf3ed086ac162314a22bef0c5d6f379f97f6037
