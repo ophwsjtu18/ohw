@@ -34,11 +34,7 @@ Hello,tell me how to use this things
 
 hello I am wwwwuhongliang 517021911015
 
->>>>>>> 7368bb066a18b85ec7292a8742c191f54d5ff7fb
-=======
->>>>>>> a18a1e5623410153bd002e362876bf900102fa16
-=======
->>>>>>> ea2aacd0b9d04bf78d14050aae524520d6335fe5
+
 hello!
 hi! i am wyk 517021910402
 <<<<<<< HEAD
