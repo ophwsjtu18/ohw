@@ -28,7 +28,7 @@ liangcw 517020910099;
 lixy 517711910045
 <<<<<<< HEAD
 <<<<<<< HEAD
-czh 5170320910226
+czh 517030910226
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -53,25 +53,15 @@ Hello,tell me how to use this things
 
 hello I am wwwwuhongliang 517021911015
 
-<<<<<<< HEAD
->>>>>>> 04ca261eeeea32de6a2597c55ece780b40403a2c
->>>>>>> 7368bb066a18b85ec7292a8742c191f54d5ff7fb
+
 =======
 >>>>>>> a18a1e5623410153bd002e362876bf900102fa16
-=======
->>>>>>> ea2aacd0b9d04bf78d14050aae524520d6335fe5
-hello!
-hi! i am wyk 517021910402
+
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 04ca261eeeea32de6a2597c55ece780b40403a2c
 =======
 >>>>>>> 978790d3f1f81797ecf75b12b1281b0d672174e2
->>>>>>> 9ed7669c95300ee18723adfb8ae26544981d4323
-=======
->>>>>>> 67b82a32f9848c07602477091c1c6dbd8fde4295
->>>>>>> 9a7bed8622839aa45f1092515fa98a87fe9a4723
-=======
 
 hello!
 hi! i am wyk 517021910402
