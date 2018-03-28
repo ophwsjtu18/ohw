@@ -1,6 +1,10 @@
 # ohw
 sjtu practice of open source hardware course 2018 spring
 
+<<<<<<< HEAD
+Hello I'm WuFu , 517020910130
+!!!!!!
+=======
 command
 name=zzjfzyz
 517021910305
@@ -40,3 +44,4 @@ hello!
 hi! i am wyk 517021910402
 >>>>>>> 04ca261eeeea32de6a2597c55ece780b40403a2c
 hhhh
+>>>>>>> e258a8b1cddf896ca5a5392606748d6a9d75aadd
