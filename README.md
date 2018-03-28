@@ -1,15 +1,16 @@
 # ohw
 sjtu practice of open source hardware course 2018 spring
 
+<<<<<<< HEAD
+Hello I'm WuFu , 517020910130
+!!!!!!
+=======
 command
 name=zzjfzyz
 517021910305
 
 
 caicai,and 517030910226
-<<<<<<< HEAD
-517021910687 zsq
-=======
 
 
 fyq\517021911110
@@ -28,6 +29,7 @@ lixy 517711910045
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 fengxuanzi 517021911094
 =======
 <<<<<<< HEAD
@@ -37,6 +39,9 @@ fengxuanzi 517021911094
 >>>>>>> 7368bb066a18b85ec7292a8742c191f54d5ff7fb
 oo
 o
+=======
+>>>>>>> 6b7c26cfcb1bc90be8e093e5855733a0bf13f007
+>>>>>>> 975ced49e174437933905a248b9f578053fe3ba6
 =======
 
 Hello,tell me how to use this things
@@ -64,3 +69,6 @@ hi! i am wyk 517021910402
 =======
 >>>>>>> 67b82a32f9848c07602477091c1c6dbd8fde4295
 >>>>>>> 04ca261eeeea32de6a2597c55ece780b40403a2c
+hhhh
+>>>>>>> e258a8b1cddf896ca5a5392606748d6a9d75aadd
+>>>>>>> ff0f6b62c0e006ea8e0c423eb48c56ca545d08a0
