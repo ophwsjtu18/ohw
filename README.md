@@ -27,6 +27,7 @@ message from 517021910847;
 liangcw 517020910099;
 lixy 517711910045
 <<<<<<< HEAD
+<<<<<<< HEAD
 czh 5170320910226
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -42,6 +43,10 @@ hello I am wwwwuhongliang 517021911015
 >>>>>>> 6b7c26cfcb1bc90be8e093e5855733a0bf13f007
 >>>>>>> 9a7bed8622839aa45f1092515fa98a87fe9a4723
 =======
+=======
+
+
+>>>>>>> 135221f651144f14d9a012f5a2944da517f051de
 
 Hello,tell me how to use this things
 
@@ -70,11 +75,13 @@ hi! i am wyk 517021910402
 
 hello!
 hi! i am wyk 517021910402
-<<<<<<< HEAD
->>>>>>> 04ca261eeeea32de6a2597c55ece780b40403a2c
+
 hhhh
+<<<<<<< HEAD
 >>>>>>> e258a8b1cddf896ca5a5392606748d6a9d75aadd
 =======
 >>>>>>> 67b82a32f9848c07602477091c1c6dbd8fde4295
 >>>>>>> ff0f6b62c0e006ea8e0c423eb48c56ca545d08a0
 >>>>>>> 0478a2bd131b064b1e8025ac63af245353ee9475
+=======
+>>>>>>> 135221f651144f14d9a012f5a2944da517f051de
