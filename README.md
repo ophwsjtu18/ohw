@@ -1,5 +1,10 @@
 # ohw
 sjtu practice of open source hardware course 2018 spring
+<<<<<<< HEAD
+command
+name=zzjfzyz
+517021910305
+=======
 hello  i'm 517082910006 gxh
 printf("Hello world!\t517021910848\tWXZ\n");
 Leon 517021910151;
