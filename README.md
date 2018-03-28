@@ -1,10 +1,8 @@
 # ohw
 sjtu practice of open source hardware course 2018 spring
 
-<<<<<<< HEAD
 Hello I'm WuFu , 517020910130
 !!!!!!
-=======
 command
 name=zzjfzyz
 517021910305
@@ -26,12 +24,20 @@ cout <<"517021910687 zsq"
 message from 517021910847;
 liangcw 517020910099;
 lixy 517711910045
->>>>>>> 6b7c26cfcb1bc90be8e093e5855733a0bf13f007
-=======
 
 Hello,tell me how to use this things
 
 
 hello I am wwwwuhongliang 517021911015
 
+<<<<<<< HEAD
 hello i am wyk 517021910402
+=======
+=======
+>>>>>>> a18a1e5623410153bd002e362876bf900102fa16
+=======
+>>>>>>> ea2aacd0b9d04bf78d14050aae524520d6335fe5
+hello!
+hi! i am wyk 517021910402
+>>>>>>> 978790d3f1f81797ecf75b12b1281b0d672174e2
+>>>>>>> dbf3ed086ac162314a22bef0c5d6f379f97f6037
