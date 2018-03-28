@@ -11,9 +11,6 @@ name=zzjfzyz
 
 
 caicai,and 517030910226
-<<<<<<< HEAD
-517021910687 zsq
-=======
 
 
 fyq\517021911110
@@ -29,6 +26,8 @@ cout <<"517021910687 zsq"
 message from 517021910847;
 liangcw 517020910099;
 lixy 517711910045
+>>>>>>> 6b7c26cfcb1bc90be8e093e5855733a0bf13f007
+=======
 
 Hello,tell me how to use this things
 
@@ -42,6 +41,10 @@ hello I am wwwwuhongliang 517021911015
 >>>>>>> ea2aacd0b9d04bf78d14050aae524520d6335fe5
 hello!
 hi! i am wyk 517021910402
+<<<<<<< HEAD
 >>>>>>> 04ca261eeeea32de6a2597c55ece780b40403a2c
 hhhh
 >>>>>>> e258a8b1cddf896ca5a5392606748d6a9d75aadd
+=======
+>>>>>>> 67b82a32f9848c07602477091c1c6dbd8fde4295
+>>>>>>> ff0f6b62c0e006ea8e0c423eb48c56ca545d08a0
