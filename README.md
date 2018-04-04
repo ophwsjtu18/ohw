@@ -50,23 +50,12 @@ Hello,tell me how to use this things
 
 hello I am wwwwuhongliang 517021911015
 
-<<<<<<< HEAD
->>>>>>> 7368bb066a18b85ec7292a8742c191f54d5ff7fb
->>>>>>> 04ca261eeeea32de6a2597c55ece780b40403a2c
-=======
->>>>>>> dbf3ed086ac162314a22bef0c5d6f379f97f6037
 =======
 >>>>>>> a18a1e5623410153bd002e362876bf900102fa16
 =======
 >>>>>>> ea2aacd0b9d04bf78d14050aae524520d6335fe5
 hello!
 hi! i am wyk 517021910402
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> a18a1e5623410153bd002e362876bf900102fa16
-=======
->>>>>>> c905baa502b764971899ed50d6c45d0e7e79f49e
 >>>>>>> 7368bb066a18b85ec7292a8742c191f54d5ff7fb
 >>>>>>> 6b7c26cfcb1bc90be8e093e5855733a0bf13f007
 >>>>>>> dcf10cdb6aaba1806e0d9cfaa455c663768ea253
@@ -79,5 +68,5 @@ hhhh
 >>>>>>> ff0f6b62c0e006ea8e0c423eb48c56ca545d08a0
 =======
 >>>>>>> 978790d3f1f81797ecf75b12b1281b0d672174e2
->>>>>>> dbf3ed086ac162314a22bef0c5d6f379f97f6037
+>>>>>>> dbf3ed086ac162314a22bef37
 I am 517021911094
