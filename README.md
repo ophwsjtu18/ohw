@@ -3,7 +3,9 @@
 http://www.instructables.com/id/Arduino-Robot-Catapult/
 
 pdf格式的文档
+https://github.com/ophwsjtu18/ohw/blob/master/Arduino-Robot-Catapult.pdf
 
+3D打印文件以及代码打包
 Arduino_catapult.rar
 
 
