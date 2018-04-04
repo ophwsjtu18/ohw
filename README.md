@@ -27,7 +27,6 @@ lixy 517711910045
 hello I am wwwwuhongliang 517021911015
 hello
 
->>>>>>> 135221f651144f14d9a012f5a2944da517f051de
 
 Hello,tell me how to use this things
 
