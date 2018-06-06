@@ -1,0 +1,109 @@
+#include <Servo.h> 
+Servo dang;
+Servo opendoor;
+Servo anotherservo;
+Servo myservo;  // create servo object to control a servo 
+                // a maximum of eight servo objects can be created 
+
+int a = 0;  //中间变量
+int pos = 90;    // variable to store the servo position 
+char comdata = "";
+int intcomdata = 90;
+void setup() {
+  dang.attach(7);
+  opendoor.attach(11);
+  anotherservo.attach(10);
+for(pos=0;pos<=150;pos+=1)
+   {
+    anotherservo.write(pos);
+    delay(15);
+    }                        // 扔的舵机归位
+for(pos=180;pos>=90;pos-=1)
+   {
+    myservo.write(pos);
+    delay(15);
+    }                        //转的舵机归零
+  // put your setup code here, to run once:
+ Serial.begin(9600);
+ myservo.attach(9);  // attaches the servo on pin 9 to the servo object
+  
+}
+
+void loop() {
+  
+
+  // put your main code here, to run repeatedly:
+
+    
+      
+     //以上为串口通信部分
+     if(Serial.available() > 0)
+ { comdata = Serial.read();
+    if(comdata == 'J')
+     {
+      for(pos=180;pos>=160;pos-=2)
+           {
+            opendoor.write(pos);
+            delay(15);
+            }  
+      for(pos=160;pos<=180;pos+=2)
+           {
+            opendoor.write(pos);
+            delay(15);
+            }
+      for(pos = 150; pos>= 60; pos-=3 )
+          {
+            anotherservo.write(pos);
+            delay(10);
+            }
+      delay(3000);        //等待三秒 使得挡板转九十度，并投石
+      for(pos = 0; pos<= 90; pos+=1)
+           {
+            dang.write(pos);
+            delay(15);
+            }
+      
+      for(pos=60 ; pos<= 150; pos+=1
+      )
+           {
+            anotherservo.write(pos);
+            delay(10);
+            }
+      }    
+         delay(3000); //等待三秒 使得挡板转九十度，并挡住投石杆
+      for(pos=90;pos>=0;pos-=1)
+         {dang.write(pos);
+          delay(15);
+          }
+      // 输入J则投石并归零
+  
+            
+    if(comdata == 'L')
+   { Serial.println("A");
+   intcomdata += 20;
+   for(pos = a; pos <= intcomdata; pos += 1)  // goes from 0 degrees to 180 degrees 
+        {                                  // in steps of 1 degree 
+            myservo.write(pos);              // tell servo to go to position in variable 'pos' 
+              delay(15);                       // waits 15ms for the servo to reach the position 
+        } 
+          
+           a=intcomdata;
+    }
+    // 输入L则向左转十度
+    if(comdata == 'R')
+    {
+      intcomdata -= 20;
+      for( pos = a; pos >= intcomdata; pos-=1)
+          {
+            myservo.write(pos);              // tell servo to go to position in variable 'pos' 
+            delay(15);                       // waits 15ms for the servo to reach the position 
+          }
+        
+           a = intcomdata;
+      }
+}
+
+    // 输入R则向右转十度
+  Serial.println(intcomdata);
+}
+ 
