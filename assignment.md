@@ -4,6 +4,10 @@
 
 ##dataquest完成python basics 一直到dictionary，完成百分数截屏jpg上传自己ophwsjtu18/ohw/students中建立自己的目录
 
+##安装githubdesktop 
+
+##安装atom
+
 #2018/10/17作业
 ##fusion360完成安装注册并完成3个作品，源文件上传ophwsjtu18/ohw/students中建立自己的目录
 以小组为单位
