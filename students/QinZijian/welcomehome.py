@@ -1,26 +1,25 @@
-
 from mcpi.minecraft import Minecraft
 import time
+import mcpi.block as block
 
 mc=Minecraft.create()
 #mc=Minecraft.create("10.163.80.195",4711)
+pos = mc.player.getTilePos()
+mc.setBlock(pos.x + 3, pos.y, pos.z, block.STONE.id)
 
 stayed_time=0
-import mcpi.block as block
-mc = Minecraft.Minecraft.create()
-pos = mc.player.getTilePos()
-mc.setBlock(pos.x+3,pos.y,pos.z,block.STONE,id)
 
 while True:
     print("stay_time"+str(stayed_time))
     time.sleep(0.5)
-    mc.postToChat("please goto home x=-30 y=-6 z=-40 for 15s to fly")
+    pos=mc.player.getTilePos()
+    mc.postToChat("please goto home x=-38 y=1 z=-49 for 15s to fly")
     mc.postToChat("x:"+str(pos.x)+"y:"+str(pos.y)+"z:"+str(pos.z))
-    if pos.x==-30 and pos.y==-6 and pos.z==-40:
+    if pos.x>=30 and pos.x <=50  and pos.y>=0 and pos.y<=10 and pos.z>=0 and pos.z<=20:
         mc.postToChat("welcome home")
         stayed_time=stayed_time+1
-        if stayed_time>=30:
-            mc.player.setTilePos(-30,10,-40)
+        if stayed_time>=10:
+            mc.player.setTilePos(47,20,11)
             stayed_time=0
     else:
         stayed_time=0
