@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 242dbbf0dca1995353fbcaf0b56e2d2182f8d777
 from mcpi.minecraft import Minecraft
 import time
 
@@ -23,6 +26,8 @@ while True:
         stayed_time=0
         
      
+<<<<<<< HEAD
+=======
 =======
 from mcpi.minecraft import Minecraft
 import time
@@ -49,3 +54,4 @@ while True:
         
      
 >>>>>>> 08c0e796b45e0378397c7a79aba5e6fd3a005d5a
+>>>>>>> 242dbbf0dca1995353fbcaf0b56e2d2182f8d777
