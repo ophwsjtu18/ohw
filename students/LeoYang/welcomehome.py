@@ -21,8 +21,7 @@ while True:
         stayed_time=0
 
 
-mc = minecraft.Minecraft.create()
-pos = mc.player.getTilePos()
-
-for i in [1,10] :
-    mc.setBlock(pos.x+3,pos.y,pos.z+i/10,block.STONE.id)
+#mc = minecraft.Minecraft.create()
+#pos = mc.player.getTilePos()
+for x in range(10):
+    mc.setBlock(pos.x+1,pos.y+x,pos.z,1)
