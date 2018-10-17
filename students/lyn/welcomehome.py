@@ -23,4 +23,4 @@ while True:
             mc.player.setTilePos(-30,10,-40)
             stayed_time=0
     else:
-        stayed_time=0
+        stayed_time==
