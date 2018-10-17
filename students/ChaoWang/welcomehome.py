@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from mcpi.minecraft import Minecraft
 import time
 
@@ -6,9 +5,8 @@ mc=Minecraft.create()
 #mc=Minecraft.create("10.163.80.195",4711)
 
 stayed_time=0
-import mcpi.minecraft as minecraft
 import mcpi.block as block
-mc = minecraft.Minecraft.create()
+mc = Minecraft.Minecraft.create()
 pos = mc.player.getTilePos()
 mc.setBlock(pos.x+3,pos.y,pos.z,block.STONE,id)
 
