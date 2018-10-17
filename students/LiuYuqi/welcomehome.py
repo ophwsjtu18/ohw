@@ -8,7 +8,18 @@ mc=Minecraft.create()
 
 stayed_time=0
 pos = mc.player.getTilePos()
-mc.setBlock(pos.x+3,pos.y,pos.z,block.STONE.id)
+
+def build(x_range,y_range,z_range,material):
+    for x in x_range:
+        for y in y_range:
+            for z in z_range:
+                mc.setBlock(pos.x+x ,pos.y+y,pos.z+z,material)
+
+build(range(-5,5),range(6),[-5,5],21) #wall
+build([-5,5],range(6),range(-5,5),21) # wall
+build(range(-5,5),[0,6], range(-5,5),22) # roof
+build([5],range(3),range(-1,1),0) # door
+build([5],[4,5],range(0,2),20) # window
 
 while True:
     print("stay_time"+str(stayed_time))
