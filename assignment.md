@@ -14,6 +14,8 @@
 
 ##fusion360完成安装注册并根据教程任选完成3个作品，源文件上传ophwsjtu18/ohw/students自己的目录
 
+##使用mac的同学自行安装pip
+
 ##分组在ophwsjtu18/ohw/teams中按照teamexample模板建立自己的组，写组员名
 
 ##投石机文档和源代码在ophwsjtu18/ohw中
