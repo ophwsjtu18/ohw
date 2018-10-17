@@ -18,12 +18,13 @@
 
 ##分组在ophwsjtu18/ohw/teams中按照teamexample模板建立自己的组，写组员名
 
-##投石机文档和源代码在ophwsjtu18/ohw中
-Arduino_Catapult.rar
-
-##参照投石机文档和STL文件，在fusion360中每个组员建模一个零件，上传到ophwsjtu18/ohw/teams中建立自己的组中
 
 #2018/10/24作业
+##投石机文档和源代码在ophwsjtu18/ohw中
+Arduino_Catapult.rar
+##参照投石机文档和STL文件，在fusion360中每个组员建模一个零件，上传到ophwsjtu18/ohw/teams中建立自己的组中
+
+#2018/10/31作业
 ## dataquest中级完成classes 类的练习
 ## 联系老师，自行打印投石机零件
 1.投石机零件分别打印出来然后组装 
@@ -32,6 +33,5 @@ Arduino_Catapult.rar
 4.主要电子零件在学校提供的arduino套件里可以找到
 5.螺丝钉皮筋之类的小东西自己解决，比如去淘宝买。
 
-#2018/10/31作业
 熟悉Linux命令和Vim用法，可参见本群fork的教程。
 
