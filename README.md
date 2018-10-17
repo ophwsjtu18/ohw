@@ -31,6 +31,4 @@ hello i'm **leoyang**
  I am qinzijian
 =======
  I am qinzijian
->>>>>>> 827b9e42d64eb2c03bde2123f1ce3ef012d32157
->>>>>>> 242dbbf0dca1995353fbcaf0b56e2d2182f8d777
->>>>>>> 217423383ab7a5d9dfa93e4268d1cc89d465012b
+ I am Chenyizhou
