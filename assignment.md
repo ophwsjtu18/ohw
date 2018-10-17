@@ -11,10 +11,8 @@
 #2018/10/17作业
 ##dataquest完成python basics 100% 完成百分数截屏jpg上传自己ophwsjtu18/ohw/students中自己的目录
 ##fusion360完成安装注册并完成3个作品，源文件上传ophwsjtu18/ohw/students自己的目录
-##分组
-参照投石机文档和STL文件
-
-
+##分组在ophwsjtu18/ohw/teams中建立自己的组
+##参照投石机文档和STL文件，在fusion360中每个组员建模一个零件
 
 1.分别打印出来然后组装 
 2.作一些小修改小改进
