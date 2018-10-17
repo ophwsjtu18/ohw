@@ -12,9 +12,12 @@
 
 ##dataquest完成python basics 100% 完成百分数截屏jpg上传自己ophwsjtu18/ohw/students中自己的目录
 
-##fusion360完成安装注册并完成3个作品，源文件上传ophwsjtu18/ohw/students自己的目录
+##fusion360完成安装注册并根据教程任选完成3个作品，源文件上传ophwsjtu18/ohw/students自己的目录
 
-##分组在ophwsjtu18/ohw/teams中按照teamexample模板建立自己的组
+##分组在ophwsjtu18/ohw/teams中按照teamexample模板建立自己的组，写组员名
+
+##投石机文档和源代码在ophwsjtu18/ohw中
+Arduino_Catapult.rar
 
 ##参照投石机文档和STL文件，在fusion360中每个组员建模一个零件，上传到ophwsjtu18/ohw/teams中建立自己的组中
 
