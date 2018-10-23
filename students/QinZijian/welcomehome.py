@@ -5,7 +5,27 @@ import mcpi.block as block
 mc=Minecraft.create()
 #mc=Minecraft.create("10.163.80.195",4711)
 pos = mc.player.getTilePos()
-mc.setBlock(pos.x + 3, pos.y, pos.z, block.STONE.id)
+for x in range(10):
+    for y in range(10):
+        mc.setBlock(pos.x + x, pos.y + y, pos.z, 1)
+        mc.setBlock(pos.x + x, pos.y + y, pos.z + 10, 1)
+for x in range(10):
+    for z in range(10):
+        mc.setBlock(pos.x + x, pos.y, pos.z + z, 3)
+        mc.setBlock(pos.x + x, pos.y + 10, pos.z + z, 1)
+for y in range(10):
+    for z in range(10):
+            mc.setBlock(pos.x , pos.y + y, pos.z + z, 4)
+            mc.setBlock(pos.x + 10, pos.y + y, pos.z + z, 5)
+for x in range(3):
+    for y in range(5):
+        mc.setBlock(pos.x + 3 + x, pos.y + y, pos.z, 0)
+for x in range(2):
+    for z in range(2):
+        mc.setBlock(pos.x + x + 3, pos.y, pos.z + z + 5, 20)
+
+
+
 
 stayed_time=0
 
