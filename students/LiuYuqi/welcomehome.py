@@ -15,7 +15,7 @@ def build(x_range,y_range,z_range,material):
             for z in z_range:
                 mc.setBlock(pos.x+x ,pos.y+y,pos.z+z,material)
 
-build(range(-5,5),range(6),[-5,5],21) #wall
+build(range(-5,5),range(6),[-5,5],21) # wall
 build([-5,5],range(6),range(-5,5),21) # wall
 build(range(-5,5),[0,6], range(-5,5),22) # roof
 build([5],range(3),range(-1,1),0) # door
