@@ -17,16 +17,20 @@ for p in ports:
 #ser=serial.Serial(port='/dev/ttymodem542')
 #wait 2 seconds for arduino board restart
 time.sleep(2)
+def song_player():
+    f = open('songs.csv', 'r')
+    songs = f.read().split('\n')
+    song_lst = [song.split(',') for song in songs]
+    #song_dict = [song[0]:song[1:] for song in song_lst]
+    print(song_lst)
+    #print(song_dict)
+    for song in song_lst:
+        print(song_lst.index(song))
+        for temp in song:
+            ser.write(temp.encode())
+            time.sleep(1)
+        time.sleep(5)
+        print('next song')
 
 
-while True:
-    resp=ser.readline()
-    rs=str(resp)
-    if 'ON' in rs:
-        print("got ON")
-    if 'OFF' in rs:
-        print("got OFF")
-    
-    
-    
-    
+song_player()
