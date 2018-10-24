@@ -2,15 +2,10 @@
 sjtu practice of open source hardware course 2018 fall
 
 hollo i am xkn
-=======
-hello i'm hebingchang
-hello I'm Cheng Yunlong
-hello i'm leoyang
-hello im huzhaoyu
-=======
 
 hello i'm @hebingchang
 
+<<<<<<< HEAD
 hello i am ChaoWang
 hello i'm hebingchang
 <<<<<<< HEAD
@@ -44,3 +39,12 @@ i am liuchengnan
 =======
  I am Chenyizhou
 >>>>>>> 2793c3e7326dda5e07c705359f12140ae2eb4309
+=======
+- hello i'm lrr.
+- hello i'm hebingchang
+- hello I'm Cheng Yunlong
+- hello I'm Liu Longxiang
+- hello i'm leoyang
+- hello i'm LiuYuqi
+- hello i'm Qinzijian
+>>>>>>> e7405fab035d8fe060491f4cc6a54336309375b6
