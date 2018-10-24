@@ -10,8 +10,8 @@ print (ports)
 
 for p in ports:
     print (p[1])
-    if "USB" in p[1]:
-	    ser=serial.Serial("COM9")
+    if "USB-SERIAL" or "UART" in p[1]:
+	    ser=serial.Serial(port=p[0])
     else :
 	    print ("No Arduino Device was found connected to the computer")
 
