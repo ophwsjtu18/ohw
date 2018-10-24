@@ -23,15 +23,17 @@
 ##投石机文档和源代码在ophwsjtu18/ohw中
 Arduino_Catapult.rar
 ##参照投石机文档和STL文件，在fusion360中每个组员建模一个零件，上传到ophwsjtu18/ohw/teams中建立自己的组中
+##dataquet Intermediate 学习，完成modules 和 classes 部分
 
 #2018/10/31作业
-## dataquest中级完成classes 类的练习
-## 联系老师，自行打印投石机零件
+联系老师，完成投石机零件的3D打印
+然后可以持续2周完成以下工作
 1.投石机零件分别打印出来然后组装 
 2.作一些小修改小改进
 3.组装完成后留着为后续与图像识别系统配合
 4.主要电子零件在学校提供的arduino套件里可以找到
 5.螺丝钉皮筋之类的小东西自己解决，比如去淘宝买。
 
+#2018/11/07作业
 熟悉Linux命令和Vim用法，可参见本群fork的教程。
 
