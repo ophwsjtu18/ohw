@@ -7,7 +7,20 @@ mc=Minecraft.create()
 
 stayed_time=0
 pos=mc.player.getTilePos()
-mc.setBlock(pos.x+3, pos.y, pos.z, block.STONE.id)
+for i in range(10):
+    for j in range(10):
+        mc.setBlock(pos.x+i, pos.y, pos.z+j, block.WOOD.id)
+        mc.setBlock(pos.x+i, pos.y+9, pos.z+j, block.STONE.id)
+for i in range(10):
+    for j in range(10):
+        mc.setBlock(pos.x+i, pos.y+j, pos.z, block.WOOD.id)
+        mc.setBlock(pos.x+i, pos.y+j, pos.z+9, block.WOOD.id)
+for i in range(10):
+    for j in range(10):
+        mc.setBlock(pos.x, pos.y+i, pos.z+j, block.WOOD.id)
+        mc.setBlock(pos.x+9, pos.y+i, pos.z+j, block.WOOD.id)
+
+
 
 while True:
     print("stay_time"+str(stayed_time))
