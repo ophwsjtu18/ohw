@@ -26,7 +26,7 @@ Arduino_Catapult.rar
 ##dataquet Intermediate 学习，完成modules 和 classes 部分
 
 #2018/10/31作业
-## 联系老师，自行打印投石机零件
+联系老师，完成投石机零件的3D打印
 然后可以持续2周完成以下工作
 1.投石机零件分别打印出来然后组装 
 2.作一些小修改小改进
