@@ -25,9 +25,5 @@ def run():
         action = input("> ")
         ser.write(action.encode())
         time.sleep(1)
-        ser.write("y".encode())
-        time.sleep(1)
-        ser.write("g".encode())
-        time.sleep(1)
-
+ 
 run()
