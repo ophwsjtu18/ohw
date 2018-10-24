@@ -26,7 +26,3 @@ while True:
         print("got ON")
     if 'OFF' in rs:
         print("got OFF")
-    
-    
-    
-    
