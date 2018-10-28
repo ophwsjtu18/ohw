@@ -1,15 +1,17 @@
 
 from mcpi.minecraft import Minecraft
+import mcpi.block as block
 import time
 
 mc=Minecraft.create()
 #mc=Minecraft.create("10.163.80.195",4711)
 
 stayed_time=0
-import mcpi.block as block
-mc = Minecraft.Minecraft.create()
 pos = mc.player.getTilePos()
-mc.setBlock(pos.x+3,pos.y,pos.z,block.STONE,id)
+
+#building
+for i in range(10):
+    mc.setBlock(pos.x+3,pos.y,pos.z,block.STONE,89)
 
 while True:
     print("stay_time"+str(stayed_time))
