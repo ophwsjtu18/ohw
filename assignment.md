@@ -4,7 +4,7 @@
 
 ##dataquest完成python basics 一直到dictionary，完成百分数截屏jpg上传自己ophwsjtu18/ohw/students中建立自己的目录
 
-##安装githubdesktop 
+##安装githubdesktop
 
 ##安装atom
 
@@ -28,7 +28,7 @@ Arduino_Catapult.rar
 #2018/10/31作业
 联系老师，完成投石机零件的3D打印
 然后可以持续2周完成以下工作
-1.投石机零件分别打印出来然后组装 
+1.投石机零件分别打印出来然后组装
 2.作一些小修改小改进
 3.组装完成后留着为后续与图像识别系统配合
 4.主要电子零件在学校提供的arduino套件里可以找到
@@ -36,4 +36,3 @@ Arduino_Catapult.rar
 
 #2018/11/07作业
 熟悉Linux命令和Vim用法，可参见本群fork的教程。
-
