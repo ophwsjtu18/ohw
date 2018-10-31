@@ -30,7 +30,8 @@ def run():
         for song in song_lst:
             if action == song[0]:
                 for i in song:
+                    i = i + 'a'
                     ser.write(i.encode())
-                    time.sleep(1)
+                    time.sleep(0.25)
 
 run()
