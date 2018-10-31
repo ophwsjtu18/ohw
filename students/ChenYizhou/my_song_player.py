@@ -21,12 +21,14 @@ def song_player():
     f = open('songs.csv', 'r')
     songs = f.read().split('\n')
     song_lst = [song.split(',') for song in songs]
-    song_dict = [song[0]:song[1:] for song in song_lst]
-    print(song_lst)
-    #print(song_dict)
-    for (name, content) in song_dict:
+    song_dict = {song[0]:song[1:] for song in song_lst}
+    #print(song_lst)
+    print(song_dict)
+
+    for (name,content) in song_dict.items():
         print('Song: %s' % name)
         for temp in content:
+            temp = temp + 'a'
             ser.write(temp.encode())
             time.sleep(0.25)
         time.sleep(5)
