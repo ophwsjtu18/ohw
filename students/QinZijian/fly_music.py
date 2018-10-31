@@ -41,7 +41,7 @@ while True:
                     time.sleep(0.25)
         stayed_time=stayed_time + 1
         if stayed_time>=10:
-            mc.player.setTilePos(40,5,10)
+            mc.player.setTilePos(40,5,35)
             stayed_time=0
     else:
         stayed_time=0
