@@ -30,9 +30,9 @@ def run():
         action = input("> ")
         if action in songs:
             for i in songs[action]:
-                ser.write(int(i))
-                time.sleep(1)
+                ser.write(i.encode())
+                ser.write('a'.encode())
+                time.sleep(0.25)
         time.sleep(1)
 
 run()
-    
