@@ -1,14 +1,22 @@
 import serial
 import serial.tools.list_ports
 import time
+import csv
 
 print ('hello')
 ports = list(serial.tools.list_ports.comports())
 print (ports)
 
+f = open("12345.csv",'r')
+songs = list(csv.reader(f))
+songs_dictory={}
+song_num = 0 
+for song in songs:
+    songs_dictory[song[0]]=song_num
+    song_num = song_num + 1
 for p in ports:
     print (p[1])
-    if "SERIAL" in p[1] or "UART" in p[1] :
+    if "SERIAL" in p[1] or "UART" in p[1]:
 	    ser=serial.Serial(port=p[0])
     else :
 	    print ("No Arduino Device was found connected to the computer")
@@ -17,21 +25,15 @@ for p in ports:
 #ser=serial.Serial(port='/dev/ttymodem542')
 #wait 2 seconds for arduino board restart
 time.sleep(2)
+
 def run():
-    f = open('songs.csv', 'r')
-    songs = f.read().split('\n')
-    song_lst = [song.split(',') for song in songs]
-    #song_dict = [song[0]:song[1:] for song in song_lst]
-    print(song_lst)
     action = "empty"
     while action != "q":
         print ('q for quit,others for command')
-        action = input("> ")
-        for song in song_lst:
-            if action == song[0]:
-                for i in song:
-                    i = i + 'a'
-                    ser.write(i.encode())
-                    time.sleep(0.25)
+        input_name = input()
+        for voise in songs[songs_dictory[input_name]]:
+            ser.write(voise.encode())
+            ser.write('a'.encode())
+            time.sleep(0.25)
 
 run()
