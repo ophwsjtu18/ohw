@@ -18,15 +18,13 @@ for p in ports:
 #wait 2 seconds for arduino board restart
 time.sleep(2)
 def song_player():
-    f = open('songs.csv', 'r')
-    songs = f.read().split('\n')
-    song_lst = [song.split(',') for song in songs]
-    #song_dict = [song[0]:song[1:] for song in song_lst]
+    song = open('songs.csv', 'r')
+    songs = song.read().split('\n')
+    song_lst = [song.split(',') for each_song in songs]
     print(song_lst)
-    #print(song_dict)
-    for song in song_lst:
-        print(song_lst.index(song))
-        for temp in song:
+    for each_song in song_lst:
+        print(song_lst.index(seach_ong))
+        for temp in each_song:
             ser.write(temp.encode())
             time.sleep(1)
         time.sleep(5)
