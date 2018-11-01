@@ -2,22 +2,9 @@ import serial
 import serial.tools.list_ports
 import time
 
-print ('hello')
-ports = list(serial.tools.list_ports.comports())
-print (ports)
 
-for p in ports:
-    print (p[1])
-    if "SERIAL" in p[1] or "UART" in p[1] :
-	    ser=serial.Serial(port=p[0])
-    else :
-	    print ("No Arduino Device was found connected to the computer")
 
-#ser=serial.Serial(port='COM4')
-#ser=serial.Serial(port='/dev/ttymodem542')
-#wait 2 seconds for arduino board restart
-time.sleep(2)
-def song_player():
+def song_player(ser):
     f = open('songs.csv', 'r')
     songs = f.read().split('\n')
     song_lst = [song.split(',') for song in songs]
@@ -32,7 +19,26 @@ def song_player():
             ser.write(temp.encode())
             time.sleep(0.25)
         time.sleep(5)
+def test_com():
+    print ('hello')
+    ports = list(serial.tools.list_ports.comports())
+    print (ports)
 
+    for p in ports:
+        print (p[1])
+        if "SERIAL" in p[1] or "UART" in p[1] :
+            ser=serial.Serial(port=p[0])
+            return ser
+        else :
+            print ("No Arduino Device was found connected to the computer")
 
+    #ser=serial.Serial(port='COM4')
+    #ser=serial.Serial(port='/dev/ttymodem542')
+    #wait 2 seconds for arduino board restart
 
-song_player()
+def main():
+    ser = test_com()
+    song_player(ser)
+
+if __name__ == '__main__':
+    main()

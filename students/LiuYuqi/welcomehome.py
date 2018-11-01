@@ -2,6 +2,7 @@ from mcpi.minecraft import Minecraft
 import mcpi.block as block
 
 import time
+import Sing_A_Song
 
 mc=Minecraft.create()
 #mc=Minecraft.create("10.163.80.195",4711)
@@ -9,6 +10,7 @@ mc=Minecraft.create()
 stayed_time=0
 pos = mc.player.getTilePos()
 
+'''
 def build(x_range,y_range,z_range,material):
     for x in x_range:
         for y in y_range:
@@ -20,6 +22,7 @@ build([-5,5],range(6),range(-5,5),21) # wall
 build(range(-5,5),[0,6], range(-5,5),22) # roof
 build([5],range(3),range(-1,1),0) # door
 build([5],[4,5],range(0,2),20) # window
+'''
 
 while True:
     print("stay_time"+str(stayed_time))
@@ -32,6 +35,7 @@ while True:
         stayed_time=stayed_time+1
         if stayed_time>=30:
             mc.player.setTilePos(-30,10,-40)
+            Sing_A_Song.song()
             stayed_time=0
     else:
         stayed_time=0
