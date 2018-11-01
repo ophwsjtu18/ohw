@@ -1,8 +1,7 @@
-
-song=[['1','1','5','5','6','6','5'],['4','4','3','3','2','2','1']]
 import serial
 import serial.tools.list_ports
 import time
+import csv
 
 print ('hello')
 ports = list(serial.tools.list_ports.comports())
@@ -16,15 +15,21 @@ for p in ports:
 	    print ("No Arduino Device was found connected to the computer")
 
 time.sleep(2)
-
+p = open("songs.csv",'r').read()
+song=[]
+g=p.split('\n')
+for i in g:
+    song.append(i.split(','))
 def run():
     action = "empty"
     while action != "q":
         print ('q for quit,others for command')
         action = input("> ")
-        for i in song[int (action)]:
-            ser.write(i.encode())
-            time.sleep(2)
+        for i in song:
+            for a in i:
+                ser.write(a.encode())
+                ser.write('a'.encode())
+                time.sleep(0.125)
     ser.close()
 
 run()

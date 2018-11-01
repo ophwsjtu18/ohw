@@ -1,11 +1,19 @@
 import serial
 import serial.tools.list_ports
 import time
+import csv
 
 print ('hello')
 ports = list(serial.tools.list_ports.comports())
 print (ports)
 
+f = open("12345.csv",'r')
+songs = list(csv.reader(f))
+songs_dictory={}
+song_num = 0 
+for song in songs:
+    songs_dictory[song[0]]=song_num
+    song_num = song_num + 1
 for p in ports:
     print (p[1])
     if "SERIAL" in p[1] or "UART" in p[1]:
@@ -18,21 +26,14 @@ for p in ports:
 #wait 2 seconds for arduino board restart
 time.sleep(2)
 
-f = open("songs.txt",'r').read().split('\n')
-songs = {}
-for i in f[:-1]:
-    songs[i.split(' ')[0]] = i.split(' ')[1].split(',')
-
 def run():
     action = "empty"
     while action != "q":
         print ('q for quit,others for command')
-        action = input("> ")
-        if action in songs:
-            for i in songs[action]:
-                ser.write(i.encode())
-                ser.write('a'.encode())
-                time.sleep(0.25)
-        time.sleep(1)
+        input_name = input()
+        for voise in songs[songs_dictory[input_name]]:
+            ser.write(voise.encode())
+            ser.write('a'.encode())
+            time.sleep(0.25)
 
 run()

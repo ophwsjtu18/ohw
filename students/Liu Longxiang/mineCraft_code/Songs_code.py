@@ -18,21 +18,18 @@ for p in ports:
 #wait 2 seconds for arduino board restart
 time.sleep(2)
 
-f = open("songs.txt",'r').read().split('\n')
-songs = {}
-for i in f[:-1]:
-    songs[i.split(' ')[0]] = i.split(' ')[1].split(',')
-
 def run():
-    action = "empty"
-    while action != "q":
-        print ('q for quit,others for command')
-        action = input("> ")
-        if action in songs:
-            for i in songs[action]:
-                ser.write(i.encode())
-                ser.write('a'.encode())
-                time.sleep(0.25)
-        time.sleep(1)
+    f = open('music.csv','r')
+    music = f.read().split('\n')
+    dic = {}
+    dic['liangzhilaohu'] = music[0]
+    dic['twinkle star'] = music[1]
+    dic['huanlesong'] = music[2]
+    while(True):
+        instruction = input('>')
+        music_line = dic[instruction].split(',')
+        for action in music_line:
+            ser.write((action+'a').encode())
+            time.sleep(0.25)
 
 run()
