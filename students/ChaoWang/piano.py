@@ -4,6 +4,7 @@ import serial.tools.list_ports
 import time
 
 print ('hello')
+
 ports = list(serial.tools.list_ports.comports())
 print (ports)
 
@@ -14,8 +15,6 @@ for p in ports:
     else :
 	    print ("No Arduino Device was found connected to the computer")
 
-#ser=serial.Serial(port='COM4')
-#ser=serial.Serial(port='/dev/ttymodem542')
 #wait 2 seconds for arduino board restart
 time.sleep(2)
 
@@ -24,7 +23,8 @@ def run():
     while action != "q":
         print ('q for quit,others for command')
         action = input("> ")
-        ser.write(int(action))
-        time.sleep(1)
+        ser.write(action.encode())
+        time.sleep(2)
+    ser.close()
 
 run()
