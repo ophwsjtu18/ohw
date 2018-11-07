@@ -37,10 +37,10 @@ while True:
         if stayed_time>=15:
             mc.player.setTilePos(-30,10,-40)
             times = times +1
-            for a in song[times%4]:
+            for a in song[times%3]:
                 ser.write(a.encode())
                 ser.write('a'.encode())
-                time.sleep(0.25)
+                time.sleep(0.150)
             stayed_time=0
     else:
         stayed_time=0
