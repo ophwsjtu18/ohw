@@ -36,3 +36,5 @@ Arduino_Catapult.rar
 
 #2018/11/07作业
 熟悉Linux命令和Vim用法，可参见本群fork的教程。
+dataquest完成pandas and numpy fundamentals中的前三课免费的
+
