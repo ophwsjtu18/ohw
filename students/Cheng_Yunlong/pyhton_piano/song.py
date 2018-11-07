@@ -29,7 +29,7 @@ def run():
             for a in i:
                 ser.write(a.encode())
                 ser.write('a'.encode())
-                time.sleep(0.25)
+                time.sleep(0.125)
     ser.close()
 
 run()
