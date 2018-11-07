@@ -2,7 +2,7 @@ import serial
 import serial.tools.list_ports
 import time
 
-songs_name = ['skycity','hometown','littleapple']
+songs_name = ['countducks','skycity','hometown','littleapple']
 
 def get_song(name):
     f = open(name,'r')
@@ -17,7 +17,7 @@ def get_song(name):
         new_data = []
     return whole_new_data
 
-def song(count):
+def sing(count):
     print ('hello')
     ports = list(serial.tools.list_ports.comports())
     print (ports)
@@ -41,21 +41,18 @@ def song(count):
     #wait 2 seconds for arduino board restart
     time.sleep(2)
 
-    def run():
-        '''
-        action = "empty"
-        while action != "q":
-            print ('q for quit,others for command')
-            action = input("> ")
-                for each in songs[str(action)]:
-        '''
+    '''
+    action = "empty"
+    while action != "q":
+        print ('q for quit,others for command')
+        action = input("> ")
+            for each in songs[str(action)]:
+    '''
 
-        for each in songs[songs_name[count]]:
-            for item in each:
-                for i in item:
-                    ser.write(i.encode())
-                    ser.write('a'.encode())
-                    time.sleep(0.25) # 每个音符间0.25
-                time.sleep(0.5) # 每句歌词 0.5
-
-    run()
+    for each in songs[songs_name[count]]:
+        for item in each:
+            for i in item:
+                ser.write(i.encode())
+                ser.write('a'.encode())
+                time.sleep(0.25) # 每个音符间0.25
+            time.sleep(0.5) # 每句歌词 0.5
