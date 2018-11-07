@@ -25,10 +25,17 @@ mc=Minecraft.create()
 
 stayed_time=0
 times=0
+
 while True:
     print("stay_time"+str(stayed_time))
     time.sleep(0.5)
     pos=mc.player.getTilePos()
+    s=0
+    if(ser.inWaiting()):
+        s=str(ser.read(1).decode())
+        print(s)
+        if (s=='\x12'):
+            mc.player.setTilePos(pos.x,pos.y+10,pos.z)
     mc.postToChat("please goto home x=-30 y=-6 z=-40 for 15s to fly")
     mc.postToChat("x:"+str(pos.x)+"y:"+str(pos.y)+"z:"+str(pos.z))
     if pos.x==-30 and pos.y==-6 and pos.z==-40:
