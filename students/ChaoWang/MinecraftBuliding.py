@@ -5,6 +5,21 @@ mc = Minecraft.create()
 pos = mc.player.getTilePos()
 
 
+class House():
+    #房子坐标([x,y,z])
+    def __init__(self,data):
+        self.pos = data
+        self.x = data[0]
+        self.y = data[1]
+        self.z = data[2]
+
+    #房顶花纹
+    def Roof():
+        x0 = self.data[0]
+        y0 = self.data[1]
+        z0 = self.data[2]
+
+
 def HouseBuild(x0,y0,z0,L,W,H,M):
     #上下面
     for i in range(L):
@@ -29,6 +44,12 @@ def HouseBuild(x0,y0,z0,L,W,H,M):
                 continue
             else:
                 mc.setBlock(x0+i,y0+j,z0,M)
+
+    #门前火把
+    mc.setBlock(x0+L/2,y0+3,z0,50)
+    mc.setBlock(x0+L/2-1,y0+3,z0,50)
+
+
 
 
 for i in range(3):
