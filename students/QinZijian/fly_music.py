@@ -11,6 +11,7 @@ pos = mc.player.getTilePos()
 mc=Minecraft.create()
 #mc=Minecraft.create("10.163.80.195",4711)
 pos = mc.player.getTilePos()
+'''
 for x in range(10):
     for y in range(10):
         mc.setBlock(pos.x + x, pos.y + y, pos.z, 1)
@@ -29,18 +30,18 @@ for x in range(3):
 for x in range(2):
     for z in range(2):
         mc.setBlock(pos.x + x + 3, pos.y, pos.z + z + 5, 20)
+'''
 
 ports = list(serial.tools.list_ports.comports())
 
 for p in ports:
     print (p[1])
     if "SERIAL" in p[1] or "UART" in p[1] :
-	    ser=serial.Serial(port=p[0])
+	    ser=serial.Serial(port=p[0], timeout = 1)
     else :
 	    print ("No Arduino Device was found connected to the computer")
 
 stayed_time=0
-count = 0
 
 f = open('songs.csv', 'r')
 songs = f.read().split('\n')
@@ -59,16 +60,15 @@ while True:
     if 'ON' in rs:
         print("got ON")
         mc.player.setTilePos(pos.x, pos.y + 15, pos.z)
-        count = count + 1
         mc.postToChat("fly")
     if 'OFF' in rs:
         print("got OFF")
-        mc.player.setTilePos(pos.x, pos.y + 15, pos.z)
+        mc.player.setTilePos(pos.x, pos.y - 15, pos.z)
         mc.postToChat("down")
 
     if pos.x>=30 and pos.x <=50  and pos.y>=0 and pos.y<=10 and pos.z>=0 and pos.z<=20:
         mc.postToChat("welcome home")
-        
+
         for song in song_lst:
             if action == song[0]:
                 for i in song:
