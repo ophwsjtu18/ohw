@@ -1,4 +1,3 @@
-import serial
 import serial.tools.list_ports
 import time
 
@@ -22,20 +21,18 @@ def run():
     f=open('song.txt','r')
     g=f.read()
     k=g.split('\n')
-    song_list={}
+    song_list=[]
+    a='a'
     for each in k:
-        tem=each.split(',')
-        song_list[tem[0]]=tem
-    action = "empty"
-    while action != "q":
-        print ('q for quit,others for command')
-        action = input("> ")
-        print(action)
-        if action in song_list:
-            rym=song_list[action][1:]
-            for each in rym:
-                ser.write(each.encode())
-                time.sleep(0.5)
+        tem=each.split('r')
+        song_list.append(tem[1:])
+    for each in song_list:
+        ser.write(each.encode())
+        ser.write('a'.encode())
+        time.sleep(0.5)
 
 
 run()
+
+
+        

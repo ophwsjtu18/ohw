@@ -31,13 +31,22 @@ for x in range(10):
         mc.setBlock(pos.x+x,pos.y+6,pos.z+z,57)
 
 
+import mcpi.minecraft as minecraft
+import mcpi.block as block
+
+mc=minecraft.Minecraft.create()
+pos=mc.player.getTilePos()
+mc.setBlock(pos.x+3,pos.y,pos.z,block.STONE.id)
+
+
+
 
 while True:
     time.sleep(0.5)
     pos=mc.player.getTilePos()
     mc.postToChat("please goto home x=-30 y=-6 z=-40 for 15s to fly")
     mc.postToChat("x:"+str(pos.x)+"y:"+str(pos.y)+"z:"+str(pos.z))
-    if pos.x<=-31 and pos.x>=-33 and pos.y>=-9 and pos.y<=-10 and pos.z>=-42 and pos.z<=-40:
+    if pos.x=30 and  pos.y=-6  and pos.z=-40 :
         mc.postToChat("welcome home")
         stayed_time=stayed_time+1
         if stayed_time>=30:
