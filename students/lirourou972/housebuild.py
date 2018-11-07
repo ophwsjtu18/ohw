@@ -19,3 +19,8 @@ def house(x0,y0,z0,L,W,H,M):
             mc.setBlock(x0+x,y0+y,z0+H,M)
 
 house(pos.x+5,pos.y,pos.z+5,10,10,10,89)
+
+class hhouse():
+    def __init__(self,data):
+        self.data=data
+    def 
