@@ -9,6 +9,7 @@ mc = Minecraft.create()
 stayed_time = 0
 pos = mc.player.getTilePos()
 
+'''
 #建房屋
 
 #上下面
@@ -37,7 +38,7 @@ for i in range(10):
 #门前火把
 mc.setBlock(pos.x+4,pos.y+3,pos.z,50)
 mc.setBlock(pos.x+5,pos.y+3,pos.z,50)
-
+'''
 
 #Arduino通信初始化
 import serial
@@ -56,7 +57,6 @@ for p in ports:
 #wait 2 seconds for arduino board restart
 time.sleep(2)
 
-#进门开灯
 
 #歌单
 MusicFile = open("songs.txt",'r').read().split('\n')
@@ -64,8 +64,30 @@ songs = {}
 for i in MusicFile[:-1]:
     songs[i.split(' ')[0]] = i.split(' ')[1].split(',')
 
+
+#小屋坐标
+# HomePos[0] <= <= HomePos[1]
+HomePos_X = [44,51]
+HomePos_y = [41,43]
+HomePos_z = [488,495]
 #回到小屋
-mc.postToChat("welcome home")
+#mc.postToChat("welcome home")
+#回屋跳起
+def Jump():
+    mc.player.setTilePos(pos.x,pos.y+10,pos.z)
+#跳起次数
+JumpTimes = 0
+#跳起音乐
+def JumpMusic(Times):
+    Times = Times%3
+    songname = list(songs.keys())[Times]
+    for i in songs[songname]:
+        ser.write(i.encode())
+        ser.write('a'.encode())
+        time.sleep(0.25)
+
+#进门开灯
+
 #迎接音乐
 def DoorMusic():
     MusicName = 'backhome'
@@ -83,9 +105,25 @@ def RoomMusic():
         time.sleep(0.25)
 
 #开关弹跳
+'''resp=ser.readline()
+rs=str(resp)
+if 'ON' in rs:
+    print("got ON")
+if 'OFF' in rs:
+    print("got OFF")'''
 
 
 while True:
-    print("stay_time"+str(stayed_time))
+    pos = mc.player.getTilePos()
+    if HomePos_X[0]<=pos.x<=HomePos_X[1]:
+        if HomePos_y[0]<=pos.y<=HomePos_y[1]:
+            if HomePos_z[0]<=pos.z<=HomePos_z[1]:
+                mc.postToChat("welcome home")
+                Jump()
+                JumpMusic(JumpTimes)
+                JumpTimes += 1
+
+    mc.postToChat("x:"+str(pos.x)+" y:"+str(pos.y)+" z:"+str(pos.z))
+    mc.postToChat("stay_time"+str(stayed_time))
     time.sleep(0.5)
     stayed_time=stayed_time+1
