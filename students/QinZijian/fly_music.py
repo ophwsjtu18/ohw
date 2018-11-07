@@ -56,25 +56,19 @@ while True:
 
     resp=ser.readline()
     rs=str(resp)
-
+    if 'ON' in rs:
+        print("got ON")
+        mc.player.setTilePos(pos.x, pos.y + 15, pos.z)
+        count = count + 1
+        mc.postToChat("fly")
+    if 'OFF' in rs:
+        print("got OFF")
+        mc.player.setTilePos(pos.x, pos.y + 15, pos.z)
+        mc.postToChat("down")
 
     if pos.x>=30 and pos.x <=50  and pos.y>=0 and pos.y<=10 and pos.z>=0 and pos.z<=20:
         mc.postToChat("welcome home")
-        if 'ON' in rs:
-            print("got ON")
-            mc.player.setTilePos(pos.x, pos.y + 15, pos.z)
-            count = count + 1
-            mc.postToChat("fly")
-        if 'OFF' in rs:
-            print("got OFF")
-            mc.player.setTilePos(pos.x, pos.y + 15, pos.z)
-            mc.postToChat("down")
-        if count % 3 == 1:
-            action = "first"
-        elif count % 3 == 2:
-            action == "second"
-        elif count % 3 == 0:
-            action == "third"
+        
         for song in song_lst:
             if action == song[0]:
                 for i in song:
