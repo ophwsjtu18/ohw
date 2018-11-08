@@ -2,7 +2,22 @@ import serial
 import serial.tools.list_ports
 import time
 
-def song():
+songs_name = ['countducks','skycity','hometown','littleapple']
+
+def get_song(name):
+    f = open(name,'r')
+    data = f.read()
+    data = data.split('\n')
+    new_data = []
+    whole_new_data = []
+    for each in data:
+        each = each.split(',')
+        new_data.append(each)     #一句
+        whole_new_data.append(new_data) #一整首
+        new_data = []
+    return whole_new_data
+
+def sing(count):
     print ('hello')
     ports = list(serial.tools.list_ports.comports())
     print (ports)
@@ -16,35 +31,28 @@ def song():
         else :
     	    print ("No Arduino Device was found connected to the computer")
 
-    f = open('xiaopingguo.csv','r')
-    data = f.read()
-    data = data.split('\n')
-    new_data = []
-    for each in data:
-        each = each.split(',')
-        new_data.append(each)
+    songs = {}
+    for song_name in songs_name:
+        new_data = get_song(song_name + '.csv')
+        songs[song_name] = new_data
 
-    songs = {
-        'xiaopingguo':new_data
-
-    }
     #ser=serial.Serial(port='COM4')
     #ser=serial.Serial(port='/dev/ttymodem542')
     #wait 2 seconds for arduino board restart
     time.sleep(2)
 
-    def run():
-        '''
-        action = "empty"
-        while action != "q":
-            print ('q for quit,others for command')
-            action = input("> ")
-                for each in songs[str(action)]:
-        '''
-        for each in songs['xiaopingguo']:
-            for item in each:
-                ser.write(item.encode())
-                ser.write('a'.encode())
-                time.sleep(0.25)
+    '''
+    action = "empty"
+    while action != "q":
+        print ('q for quit,others for command')
+        action = input("> ")
+            for each in songs[str(action)]:
+    '''
 
-    run()
+    for each in songs[songs_name[count]]:
+        for item in each:
+            for i in item:
+                ser.write(i.encode())
+                ser.write('a'.encode())
+                time.sleep(0.25) # 每个音符间0.25
+            time.sleep(0.5) # 每句歌词 0.5
