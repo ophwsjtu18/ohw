@@ -25,10 +25,17 @@ mc=Minecraft.create()
 
 stayed_time=0
 times=0
+
 while True:
     print("stay_time"+str(stayed_time))
     time.sleep(0.5)
     pos=mc.player.getTilePos()
+    s=0
+    if(ser.inWaiting()):                  #task 5
+        s=str(ser.read().decode())
+        print(s)
+        if (s=='a'):
+            mc.player.setTilePos(pos.x,pos.y+10,pos.z)     #
     mc.postToChat("please goto home x=-30 y=-6 z=-40 for 15s to fly")
     mc.postToChat("x:"+str(pos.x)+"y:"+str(pos.y)+"z:"+str(pos.z))
     if pos.x==-30 and pos.y==-6 and pos.z==-40:
@@ -37,10 +44,10 @@ while True:
         if stayed_time>=15:
             mc.player.setTilePos(-30,10,-40)
             times = times +1
-            for a in song[times%3]:
+            for a in song[times%3]:       #task 4
                 ser.write(a.encode())
                 ser.write('a'.encode())
-                time.sleep(0.150)
+                time.sleep(0.150)         #
             stayed_time=0
     else:
         stayed_time=0
