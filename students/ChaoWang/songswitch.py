@@ -13,8 +13,6 @@ for p in ports:
     else :
 	    print ("No Arduino Device was found connected to the computer")
 
-#ser=serial.Serial(port='COM4')
-#ser=serial.Serial(port='/dev/ttymodem542')
 #wait 2 seconds for arduino board restart
 time.sleep(2)
 
