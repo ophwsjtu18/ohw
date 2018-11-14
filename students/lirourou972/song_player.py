@@ -33,8 +33,9 @@ def run():
         print(action)
         if action in song_list:
             rym=song_list[action][1:]
-            for each in rym:
-                ser.write(each.encode())
+            for a in rym:
+                ser.write(a.encode())
+                ser.write('a'.encode())
                 time.sleep(0.5)
 
 
