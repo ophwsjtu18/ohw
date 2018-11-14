@@ -57,12 +57,12 @@ def house(xo, yo, zo, L, W, H, M):#造房子，参数：房子原点位置， �
     #前后面+门
     for x in range(L):
         for y in range(H):
+            mc.setBlock(xo+x, yo+y, zo+W-1, M)
+
             if(L/2 - 1<= x <= L/2+1) and (0 <= y <= 3):
                 continue
-            else：
+            else:
                 mc.setBlock(xo+x, yo+y, zo, M)
-
-            mc.setBlock(xo+x, yo+y, zo+W-1, M)
     #左右面+窗
     for z in range(W):
         for y in range(H):
