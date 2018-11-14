@@ -10,6 +10,8 @@ def house(x0, y0, z0, L, W, H, M):
             for z in range(W):
                 mc.setBlock(x0 + x, y0 + y, z0 + z, M)
 
+#new
+
     for x in range(L - 2):
         for y in range(H - 2):
             for z in range(W - 2):

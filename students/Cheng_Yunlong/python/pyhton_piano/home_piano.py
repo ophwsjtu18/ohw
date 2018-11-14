@@ -32,9 +32,9 @@ while True:
     pos=mc.player.getTilePos()
     s=0
     if(ser.inWaiting()):                  #task 5
-        s=str(ser.read(1).decode())
+        s=str(ser.read().decode())
         print(s)
-        if (s=='\x12'):
+        if (s=='a'):
             mc.player.setTilePos(pos.x,pos.y+10,pos.z)     #
     mc.postToChat("please goto home x=-30 y=-6 z=-40 for 15s to fly")
     mc.postToChat("x:"+str(pos.x)+"y:"+str(pos.y)+"z:"+str(pos.z))
