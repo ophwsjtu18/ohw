@@ -3,22 +3,22 @@ import mcpi.block as block
 
 mc=minecraft.Minecraft.create()
 pos=mc.player.getTilePos()
-mc.setBlock(pos.x+3,pos.y,pos.z,block.STONE.id)
+#mc.setBlock(pos.x+3,pos.y,pos.z,block.STONE.id)
 
-def hhouse(x0,y0,z0,L,W,H,M):
-    for x in range(L):
-        for y in range (H):
-            mc.setBlock(x0+x,y0+y,z0,M)
-            mc.setBlock(x0+x,y0+y,z0+W,M)
-    for z in range(W):
-        for y in range(H):
-            mc.setBlock(x0,y0+y,z0+z,M)
-            mc.setBlock(x0+L,y0+y,z0+z,M)
-    for x in range(L):
-        for y in range(W):
-            mc.setBlock(x0+x,y0+y,z0+H,M)
+#def hhouse(x0,y0,z0,L,W,H,M):
+#    for x in range(L):
+#        for y in range (H):
+#            mc.setBlock(x0+x,y0+y,z0,M)
+#            mc.setBlock(x0+x,y0+y,z0+W,M)
+#    for z in range(W):
+#        for y in range(H):
+#            mc.setBlock(x0,y0+y,z0+z,M)
+#            mc.setBlock(x0+L,y0+y,z0+z,M)
+#    for x in range(L):
+#        for y in range(W):
+#            mc.setBlock(x0+x,y0+y,z0+H,M)
 
-house(pos.x+5,pos.y,pos.z+5,10,10,10,89)
+#house(pos.x+5,pos.y,pos.z+5,10,10,10,89)
 
 class house():
     def __init__(self,data):
@@ -119,3 +119,9 @@ class house():
             for x in range(7,11):
                 mc.setBlock(x0+x,y0+y,z0,89)
                 mc.setBlock(x0+x,y0+y,z0+10,89)
+
+mh1=house(pos.x+3,pos.z+3,pos.y)
+mh1.buildwall()
+mh1.buildroof()
+mh1.buildwallwithdoor(
+mh1.buildwallwithwindow()
