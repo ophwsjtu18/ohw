@@ -43,3 +43,6 @@ dataquest完成pandas and numpy fundamentals中的前三课免费的
 每组完成投石机底座的激光切割
 下次课程申请螺丝刀热熔胶枪螺丝等小工具，每组一套arduino超全套件组装投石机
 
+#2018/11/21
+ 
+
