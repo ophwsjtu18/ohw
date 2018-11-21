@@ -90,6 +90,7 @@ void setup()
 
   // 每次开启arudino时， 四个舵机都会复位到93度
   init_pos = 93;
+
   Serial.println(baseServo.read());
   Serial.println("I've pritened the baseServo position");
   Serial.println(trayServo.read());
@@ -104,13 +105,11 @@ void setup()
   //sweep(armServo, 0, 180, 15);
   //sweep(trayServo, 0, 180, 15);
 
-
-
   trayClose();
 
   delay(250); /// you have time to load bullets
   trayRelease();
-  Serial.begin(9600);
+
   Serial.println("Start");
   rest();
   prepareToShoot(armArmed);
@@ -147,6 +146,7 @@ void loop()
   String item;
   long itemint;
 
+  //while (Serial.available() > 0)
   if (Serial.available() > 0)
   {
     item = Serial.readStringUntil(' ');
