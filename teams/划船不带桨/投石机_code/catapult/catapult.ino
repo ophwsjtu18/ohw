@@ -10,10 +10,10 @@ Servo baseServo;
 #define armOpen 140
 #define armArmed 45
 
-#define trayClosed 177
-#define trayOpened 172
+#define trayClosed 180
+#define trayOpened 150
 
-void rest() //复位
+void rest() //整体复位
 {
   sweep(lockServo, lockServo.read(), lockOpen, 15);
   sweep(armServo, armServo.read(), armOpen, 5);
