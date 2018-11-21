@@ -87,6 +87,9 @@ void setup()
   trayServo.attach(6); //9g舵机
   baseServo.attach(9); //995舵机
   Serial.begin(9600);
+
+  // 每次开启arudino时， 四个舵机都会复位到93度
+  init_pos = 93;
   Serial.println(baseServo.read());
   Serial.println("I've pritened the baseServo position");
   Serial.println(trayServo.read());
@@ -95,10 +98,14 @@ void setup()
   Serial.println("I've pritened the armServo position");
   Serial.println(lockServo.read());
   Serial.println("I've pritened the lockServo position");
-  sweep(baseServo, 0, 180, 15);
-  sweep(lockServo, 0, 180, 15);
-  sweep(armServo, 0, 180, 15);
-  sweep(trayServo, 0, 180, 15);
+
+  //sweep(baseServo, 0, 180, 15);
+  //sweep(lockServo, 0, 180, 15);
+  //sweep(armServo, 0, 180, 15);
+  //sweep(trayServo, 0, 180, 15);
+
+
+
   trayClose();
 
   delay(250); /// you have time to load bullets
