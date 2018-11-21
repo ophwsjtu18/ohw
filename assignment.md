@@ -38,3 +38,8 @@ Arduino_Catapult.rar
 熟悉Linux命令和Vim用法，可参见本群fork的教程。
 dataquest完成pandas and numpy fundamentals中的前三课免费的
 
+#2018/11/14作业
+每人完成一个个人激光切割小盒子或立方体
+每组完成投石机底座的激光切割
+下次课程申请螺丝刀热熔胶枪螺丝等小工具，每组一套arduino超全套件组装投石机
+
