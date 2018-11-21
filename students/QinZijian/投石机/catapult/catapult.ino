@@ -119,8 +119,6 @@ int auto_run(int jd,int aarm,int shooting)
 }
 
 void loop() {  
-    trayOpen();
-    trayClose();
     long mylist[]={0, 0, 0, 0, 0, 0, 0};
     long cur;
     String strshow;
