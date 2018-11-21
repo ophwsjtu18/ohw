@@ -65,7 +65,7 @@ void trayOpen()
   sweep(trayServo, trayServo.read(), trayOpened, 22);
 }
 
-void trayRelease()
+void trayRelease() //装弹，两秒的时间
 {
   trayClose();
   trayOpen();
@@ -73,7 +73,7 @@ void trayRelease()
   delay(2000);
 }
 
-void baseMove(int jd)
+void baseMove(int jd) //底座转动一个角度
 {
   sweep(baseServo, baseServo.read(), jd * 90 / 100 + 10, 15);
 }
