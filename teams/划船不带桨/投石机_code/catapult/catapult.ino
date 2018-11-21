@@ -13,7 +13,7 @@ Servo baseServo;
 #define trayClosed 177
 #define trayOpened 172
 
-void rest()
+void rest() //复位
 {
   sweep(lockServo, lockServo.read(), lockOpen, 15);
   sweep(armServo, armServo.read(), armOpen, 5);
@@ -29,7 +29,7 @@ void prepareToShoot(int armArm)
   Serial.println(armshoot);
 }
 
-void shoot()
+void shoot() //释放石块
 {
   sweep(lockServo, lockServo.read(), lockOpen, 15);
 }

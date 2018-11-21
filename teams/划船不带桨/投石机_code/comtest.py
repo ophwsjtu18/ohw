@@ -17,7 +17,8 @@ for p in ports:
 time.sleep(5)
 
 song = ['A', '1', '0', '0', ' ', '1', '0', '0']
-cmd1 = "A 30 20 20 0 0" # jd aarm shotting jd是底座转动的角度，
+cmd1 = "A 30 20 20 0 0" 
+# jd aarm shotting jd是底座转动的角度，aarm相当于蓄力，shooting大于90为释放
 cmd2 = "A 90 20 20 0 0"
 cmd3 = "A 150 20 20 0 0"
 cmds = [cmd1, cmd2, cmd3]
