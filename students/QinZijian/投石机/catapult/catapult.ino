@@ -69,10 +69,10 @@ void baseMove(int jd) {
 void setup() {
 Serial.begin(9600);
     /// connect servo motors
-    lockServo.attach(3); 
-    armServo.attach(5) ; 
-    trayServo.attach(6);
-    baseServo.attach(9) ;  
+    lockServo.attach(3); //9g舵机
+    armServo.attach(5) ; //995舵机
+    trayServo.attach(6); //9g舵机
+    baseServo.attach(9); //995舵机  
     Serial.begin(9600);
     Serial.println(baseServo.read());
     Serial.println("I've pritened the baseServo position");
