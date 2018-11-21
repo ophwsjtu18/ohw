@@ -30,7 +30,7 @@ while True:
     print(cmd)
     time.sleep(5)
     count=count+1
-    if count >2:
+    if count >2: #大于等于3的时候归零
         count=0
 
 
