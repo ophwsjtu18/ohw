@@ -75,7 +75,7 @@ void trayRelease() //装弹，两秒的时间
 
 void baseMove(int jd) //底座转动一个角度
 {
-  sweep(baseServo, baseServo.read(), jd * 90 / 100 + 10, 15);
+  sweep(baseServo, baseServo.read(), jd, 15);
 }
 
 void setup()
@@ -89,7 +89,7 @@ void setup()
   Serial.begin(9600);
 
   // 每次开启arudino时， 四个舵机都会复位到93度
-  init_pos = 93;
+  // int init_pos = 93;
 
   Serial.println(baseServo.read());
   Serial.println("I've pritened the baseServo position");
@@ -100,21 +100,11 @@ void setup()
   Serial.println(lockServo.read());
   Serial.println("I've pritened the lockServo position");
 
-  //sweep(baseServo, 0, 180, 15);
-  //sweep(lockServo, 0, 180, 15);
-  //sweep(armServo, 0, 180, 15);
-  //sweep(trayServo, 0, 180, 15);
-
   trayClose();
 
   delay(250); /// you have time to load bullets
-  trayRelease();
 
   Serial.println("Start");
-  rest();
-  prepareToShoot(armArmed);
-  shoot();
-  rest();
   Serial.begin(9600);
   Serial.println("Going to loop");
 }
@@ -138,32 +128,29 @@ int auto_run(int jd, int aarm, int shooting)
   Serial.println("I've pritened the trayServo position");
 }
 
+
+//初始化一些全局变量
+long mylist[] = {0, 0, 0, 0, 0};
+long cur;
+String item;
+long itemint;
+  
 void loop()
 {
-  long mylist[] = {0, 0, 0, 0, 0, 0, 0};
-  long cur;
-  String strshow;
-  String item;
-  long itemint;
-
-  //while (Serial.available() > 0)
-  if (Serial.available() > 0)
+  if(Serial.available() > 0)
   {
     item = Serial.readStringUntil(' ');
-    if (String(item).equals(String("A")))
+    if(item == "A")
     {
       cur = 0;
-    }
-    else
-    {
-      itemint = String(item).toInt();
-      cur = cur + 1;
-      mylist[(int)(cur - 1)] = itemint;
-      if (cur > 5)
+      for(int i = 1;i <= 5; i++ )
       {
-        cur = 5;
-      }
+        cur = i;
+        item = Serial.readStringUntil(' ');
+        itemint = String(item).toInt();
+        mylist[(int)(cur - 1)] = itemint;
+       }
+       auto_run(mylist[0], mylist[1], mylist[2]);
     }
   }
-  auto_run(mylist[1], mylist[2], mylist[3]);
 }
