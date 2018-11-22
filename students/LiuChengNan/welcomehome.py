@@ -78,7 +78,7 @@ def house(xo, yo, zo, L, W, H, M):#造房子，参数：房子原点位置， �
             mc.setBlock(xo+x, yo+H-1, zo+z, M)
 
 
-#house(pos.x+1,pos.y+1,pos.z+1,6,8,10,block.STONE.id)
+house(pos.x+1,pos.y+1,pos.z+1,6,8,10,block.STONE.id)
 
 while True:
     #提示回家
