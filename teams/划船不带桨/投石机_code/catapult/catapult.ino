@@ -4,27 +4,29 @@ Servo armServo;
 Servo trayServo;
 Servo baseServo;
 
-#define lockOpen 110
+#define lockOpen 100
 #define lockClosed 20
 
-#define armOpen 140
-#define armArmed 45
+#define armOpen 180
+//#define armArmed 45
 
-#define trayClosed 180
-#define trayOpened 150
+#define trayClosed 93
+#define trayOpened 70
 
 void rest() //整体复位
 {
   sweep(lockServo, lockServo.read(), lockOpen, 15);
-  sweep(armServo, armServo.read(), armOpen, 5);
+  sweep(armServo, armServo.read(), armOpen, 50);
 }
 
-void prepareToShoot(int armArm)
+void prepareToShoot(int armshoot)
 {
-  int armshoot;
-  armshoot = (180 - armArm) / 3;
+  //int armshoot;
+  //armshoot = (180 - armArm) / 3;
   sweep(lockServo, lockClosed, lockClosed, 15);
-  sweep(armServo, armshoot, armshoot, 5);
+  //wait for locking
+  delay(2000);
+  sweep(armServo, armshoot, armshoot, 50);
   Serial.println("armshoot:");
   Serial.println(armshoot);
 }
@@ -101,11 +103,11 @@ void setup()
   Serial.println("I've pritened the lockServo position");
 
   trayClose();
-
+  rest();
   delay(250); /// you have time to load bullets
-
-  Serial.println("Start");
   Serial.begin(9600);
+  Serial.println("Start");
+
   Serial.println("Going to loop");
 }
 
@@ -121,7 +123,10 @@ int auto_run(int jd, int aarm, int shooting)
   if (shooting >= 90)
   {
     shoot();
+    //wait for shooting
+    delay(1000);
     rest();
+    delay(1000);
   }
   Serial.println("tray is moving");
   Serial.println(trayServo.read());

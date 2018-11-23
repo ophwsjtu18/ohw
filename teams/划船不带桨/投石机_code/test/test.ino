@@ -39,6 +39,8 @@ void loop()
   Serial.println(lockServo.read());
   Serial.println("I've pritened the lockServo position");
   delay(1000);
-  servo_angle(baseServo, 110);
-  servo_angle(armServo, 40);
+  servo_angle(baseServo, 93);
+  servo_angle(armServo, 93);
+  servo_angle(trayServo, 93);
+  servo_angle(lockServo, 93);
 }

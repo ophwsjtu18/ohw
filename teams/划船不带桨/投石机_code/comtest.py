@@ -15,15 +15,16 @@ for p in ports:
         print("No Arduino Device was found connected to the computer")
 
 time.sleep(5)
-
+'''
 song = ['A', '1', '0', '0', ' ', '1', '0', '0']
-cmd1 = "A 30 110 20 0 0"
-# jd aarm shotting jd是底座转动的角度，aarm相当于蓄力，shooting大于90为释放
-cmd2 = "A 90 20 20 0 0"
-cmd3 = "A 150 60 20 0 0"
+cmd1 = "A 0 0 120 0 0"
+# jd aarm shotting jd是底座转动的角度，aarm相当于投臂的角度，shooting大于90为释放
+cmd2 = "A 90 0 120 0 0"
+cmd3 = "A 150 180 20 0 0"
 cmds = [cmd1, cmd2, cmd3]
 
 count = 0
+
 
 while True:
     cmd = cmds[count]
@@ -33,3 +34,20 @@ while True:
     count = count+1
     if count > 2:  # 大于等于3的时候归零
         count = 0
+'''
+
+# Only for shooting
+while True:
+    base_angle = input("Base angle(0 ~ 180): ")
+    arm_angle = input("Arm angle(0-maximum ~ 60-minimum): ")
+    shoot_cmd = "A " + base_angle + " " + arm_angle + " 120 0 0 "
+    ser.write(shoot_cmd.encode())
+    print(shoot_cmd)
+    print("Waiting for execution......")
+    time.sleep(20)
+
+
+
+
+
+
