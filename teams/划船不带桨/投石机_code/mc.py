@@ -1,7 +1,7 @@
 # coding:utf-8
 import mcpi.minecraft as minecraft
 import mcpi.block as block
-import mcpi.minecraftstuff as minecraftstuff
+# import mcpi.minecraftstuff as minecraftstuff
 import time
 from random import *
 from math import *
