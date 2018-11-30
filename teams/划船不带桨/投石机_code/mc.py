@@ -11,7 +11,6 @@ import serial
 打击钻石块时会向串口（com5）发送一个字符串，格式为“角度，1”
 '''
 
-
 #ser=serial.Serial("COM5",115200,timeout=0.5)
 
 mc=minecraft.Minecraft.create()
