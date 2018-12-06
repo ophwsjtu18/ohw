@@ -282,7 +282,7 @@ def overlay_on_image(display_image, filtered_objects):
 
     num = len(filtered_objects)
     with open('/var/www/html/person_num.html', 'w') as f1:
-		f1.write(str(num))
+        f1.write(str(num))
 
     # loop through each box and draw it on the image along with a classification label
     for obj_index in range(len(filtered_objects)):
