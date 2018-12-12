@@ -7,7 +7,7 @@ mc=Minecraft.create()
 pos=mc.player.getTilePos()
 mc.setBlock(pos.x+3,pos.y,pos.z,1)
 
-def house(x0,y0,z0,L,W,H,M):
+def house(x0,y0,z0,L,W,H,M):   #M means material
     for x in range(L):
         for z in range(W):
             for y in range(H):
@@ -34,5 +34,3 @@ def house(x0,y0,z0,L,W,H,M):
 for i in range(30):
     m=12*i
     house(pos.x+m,pos.y,pos.z,9,9,6,5)
-    
-
