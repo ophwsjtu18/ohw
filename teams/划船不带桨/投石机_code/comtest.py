@@ -7,6 +7,7 @@ ports = list(serial.tools.list_ports.comports())
 print(ports)
 
 
+
 for p in ports:
     print(p[1])
     if "Arduino Uno" in p[1]:
