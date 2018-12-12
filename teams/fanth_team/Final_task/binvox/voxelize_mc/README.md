@@ -1,12 +1,7 @@
 # 拖拽stl文件致voxelize.bat文件，将生成一个.binvox 文件，以及可在viewvox 中查看
 ## vox.py将3D模型传入minecraft
 ## 文件夹放在英文目录中，尽量放在根目录
-<<<<<<< HEAD
 ## spowers.stl为组内图腾，为一超级核电站
-=======
-## spowers为组内图腾，为一超级核电站
->>>>>>> c59a5f88a9468fbcd886996add588c6d1d165d6b
-
 
 
 
