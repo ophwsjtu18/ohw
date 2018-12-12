@@ -6,7 +6,6 @@ from urllib import request
 
 mc=Minecraft.create()
 pos=mc.player.getTilePos()
-mc.setBlock(pos.x+3,pos.y,pos.z,1)
 
 while True:
     pos=mc.player.getTilePos()
