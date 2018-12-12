@@ -6,10 +6,8 @@ Servo baseServo ;
 
 #define lockOpen    110 
 #define lockClosed  20 
-
 #define armOpen     140 
 #define armArmed    45
-
 #define trayClosed  177
 #define trayOpened  172
 
