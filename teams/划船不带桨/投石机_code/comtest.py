@@ -7,6 +7,7 @@ ports = list(serial.tools.list_ports.comports())
 print(ports)
 
 
+
 for p in ports:
     print(p[1])
     if "Arduino Uno" in p[1]:
@@ -38,7 +39,7 @@ while True:
 
 # Only for shooting
 while True:
-    base_angle = input("Base angle(0 ~ 180): ")
+    base_angle = input("Base angle(0 ~ 150): ")
     arm_angle = input("Arm angle(0-maximum ~ 60-minimum): ")
     shoot_cmd = "A " + base_angle + " " + arm_angle + " 120 0 0 "
     ser.write(shoot_cmd.encode())
