@@ -24,9 +24,7 @@ def build_maze():
         x = origin_x
         for cell in data:
             #print(cell)
-            if cell == " ":
-                b = GAP
-            elif cell == '+':
+            if cell == " " or cell == '+':
                 b = GAP
             else:
                 b = WALL
