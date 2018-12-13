@@ -112,7 +112,7 @@ create_maze()
 
 #方法2
 
-
+'''
 def show_maze(maze):
     for i in maze:
         for j in i:
@@ -126,7 +126,7 @@ def show_maze(maze):
                 print(j, end=' ')
         print()
 # build a maze which the size of maze is [n]
-
+'''
 
 def build_maze(n):
     maze = []
