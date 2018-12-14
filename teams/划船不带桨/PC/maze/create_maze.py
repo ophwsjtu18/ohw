@@ -181,7 +181,7 @@ def route(m):
     #show_maze(maze)
     maze[m+1][-2] = '+'
     maze[0][1] = '+'
-    #print(maze)
+    print(maze)
     with open('maze.csv', 'w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
         writer.writerows(maze)
