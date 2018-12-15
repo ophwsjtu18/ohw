@@ -39,7 +39,7 @@ void rest() {
 
 void shootprep(int strength) {
     sweep(trayServo,trayServo.read(),trayOpened,10) ;
-    delay(1000);
+    delay(1500);
     sweep(trayServo,trayServo.read(),trayClosed,10) ;
     if(strength<0)  strength = 0;
     if(strength>30) strength = 30;
@@ -92,4 +92,4 @@ void loop(){
           }
        }
     auto_run(cmd[0],cmd[1]);
-    }  
+    }
