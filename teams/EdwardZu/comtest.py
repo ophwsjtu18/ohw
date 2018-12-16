@@ -2,6 +2,20 @@ import serial
 import serial.tools.list_ports
 import time
 import urllib.request as request
+import mcpi.minecraft as minecraft
+
+mc=minecraft.Minecraft.create()
+
+
+def isClick():
+    while True:
+        events=mc.events.pollBlockHits()
+        for e in events:
+            if e.pos.x>134 and e.pos.x<139 and e.pos.y>79 and e.pos.y<84 and e.pos.z>25 and e.pos.z<28:
+                return 1
+            else:
+                return 0
+
 
 url = "http://172.20.10.12/num/index.html"
 
@@ -37,9 +51,9 @@ def target():
 
 
 song = ['A', '1', '0', '0', ' ', '1', '0', '0']
-cmd1 = "A 30 20 90 0 0".split(' ')
-cmd2 = "A 60 20 90 0 0".split(' ')
-cmd3 = "A 90 20 100 0 0".split(' ')
+cmd1 = "A 30 0 90 0 0".split(' ')
+cmd2 = "A 60 0 90 0 0".split(' ')
+cmd3 = "A 90 0 100 0 0".split(' ')
 cmds = [cmd1, cmd2, cmd3]
 print(cmds)
 count = 0
@@ -51,10 +65,15 @@ while True:
     time.sleep(1)
     cmd = cmds[count]
 
+    attack = isClick()
+    if attack == 1:
+        cmd[4] = "1"
+
+
     people = target()
-    if int(people) == 0:
-        cmd[2] = "0"
-        cmd[3] = "0"
+    if people == 1:
+        cmd[2] = "20"
+        cmd[5] = "1"
 
     for i in cmd:
         print(i, end=' ')
