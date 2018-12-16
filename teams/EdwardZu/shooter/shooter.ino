@@ -7,11 +7,11 @@ Servo baseServo ;
 #define lockOpen    110
 #define lockClosed  20
 
-#define armOpen     180
-#define armArmed    20
+#define armOpen     90
+#define armArmed    60
 
-#define trayClosed  127
-#define trayOpened  122
+#define trayClosed  100
+#define trayOpened  95
 
 void rest() {
   sweep(armServo,armServo.read(),armOpen,50) ;
@@ -21,7 +21,7 @@ void rest() {
 
 void prepareToShoot(int armArm) {
   int armshoot;
-  armshoot=(180-armArm);
+  armshoot=(armOpen-armArm);
 //  sweep(lockServo,lockClosed,lockClosed,15) ;
   sweep(armServo,armServo.read(),armshoot,50) ;
   Serial.println("armshoot:");
@@ -70,18 +70,18 @@ void setup() {
 Serial.begin(9600);
     /// connect servo motors
     lockServo.attach(3);
-    armServo.attach(5) ;
+    armServo.attach(10) ;
     trayServo.attach(6);
     baseServo.attach(9) ;
     Serial.begin(9600);
-    Serial.println(baseServo.read());
-    Serial.println("I've pritened the baseServo position");
-    Serial.println(trayServo.read());
-    Serial.println("I've pritened the trayServo position");
-    Serial.println(armServo.read());
-    Serial.println("I've pritened the armServo position");
-    Serial.println(lockServo.read());
-    Serial.println("I've pritened the lockServo position");
+//    Serial.println(baseServo.read());
+//    Serial.println("I've pritened the baseServo position");
+//    Serial.println(trayServo.read());
+//    Serial.println("I've pritened the trayServo position");
+//    Serial.println(armServo.read());
+//    Serial.println("I've pritened the armServo position");
+//    Serial.println(lockServo.read());
+//    Serial.println("I've pritened the lockServo position");
     //sweep(baseServo,0,180,50);
     //sweep(lockServo,0,180,50);
     //sweep(armServo,0,180,50);
@@ -105,33 +105,35 @@ Serial.begin(9600);
 
 int auto_run(int jd,int aarm,int shooting)
 {
-    baseMove(jd);
-    trayRelease();
+    if(jd>=0 && jd<= 120)
+      baseMove(jd+30);
+    if(aarm>0)
+        trayRelease();
     prepareToShoot(aarm) ;
     Serial.println ("auto_runint jd,int aarm,int shooting");
-    Serial.println(jd);
-    Serial.println(aarm);
-    Serial.println(shooting);
+//    Serial.println(jd);
+//    Serial.println(aarm);
+//   Serial.println(shooting);
     if(shooting>=90){
        shoot();
        rest();
     }
     Serial.println("tray is moving");
-    Serial.println(trayServo.read());
-    Serial.println("I've pritened the trayServo position");
-    Serial.println("OVER")
+//    Serial.println(trayServo.read());
+//    Serial.println("I've pritened the trayServo position");
+    Serial.println("OVER");
 }
 
 void loop() {
 
-    long mylist[]={0, 0, 0, 0, 0, 0};
+    long mylist[]={0, 60, 0, 0, 0, 0};
     long cur;
     String strshow;
     String item;
     long itemint;
     while (Serial.available() > 0) {
         item = Serial.readStringUntil(' ');
-        Serial.println(item);
+        //Serial.println(item);
         if (String(item).equals(String("A"))) {
             cur = 0;
         } else {
