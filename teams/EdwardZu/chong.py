@@ -1,7 +1,11 @@
-import urllib.request
+import urllib.request as request
 import time
+url = "http://172.20.10.12/num/index.html"
+# 其中具体ip地址要视网络热点决定（寝室192.168.50.144）
+
 while True:
-    response = urllib.request.urlopen('http://172.20.10.12/num/index.html')
-    file = response.read()
-    print(file.decode('utf-8'))
+    file = request.urlopen(url)
+    dataline = file.readline()
+    print(dataline.decode("utf-8"))
     time.sleep(1)
+    # print(type(dataline)) #读取为bytes形式，需要decode（）
