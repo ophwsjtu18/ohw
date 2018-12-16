@@ -19,11 +19,13 @@ for p in ports:
 #wait 2 seconds for arduino board restart
 time.sleep(2)
 while(True):
-	f = request.urlopen("http://192.168.209.138/data.html")
+	f = request.urlopen("http://192.168.137.229/data.html")
 	data = f.read()
 	data = data.decode('utf-8')
 	data = data.split('\n')
-	angle = int(-70*float(data[0]))
+	angle = int(50*float(data[0]))
+	print("x: "+str(float(data[0])))
+	print("y: "+str(float(data[1])))
 
 	action = "A "+str(angle)+" "+"60"
 	ser.write(action.encode())
