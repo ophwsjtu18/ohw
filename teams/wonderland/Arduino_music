@@ -9,47 +9,68 @@ void loop()
 {
   if (Serial.available() > 0) {
     switch (String(Serial.readStringUntil('a')).toInt()) {
-     case 1:
+      case -7:
+      tone(BuzzerPin6,262);
+      break;
+      case -6:
+      tone(BuzzerPin6,293);
+      break;
+     case -5:
+      tone(BuzzerPin6,329);
+      break;
+     case -4:
+      tone(BuzzerPin6,349);
+      break;
+     case -3:
+      tone(BuzzerPin6,391);
+      break;
+     case -2:
       tone(BuzzerPin6,440);
       break;
-      case 2:
+     case -1:
       tone(BuzzerPin6,494);
       break;
-     case 3:
-      tone(BuzzerPin6,554);
+     case 1:
+      tone(BuzzerPin6,523);
       break;
-     case 4:
+      case 2:
       tone(BuzzerPin6,587);
       break;
-     case 5:
+     case 3:
       tone(BuzzerPin6,659);
       break;
+     case 4:
+      tone(BuzzerPin6,698);
+      break;
+     case 5:
+      tone(BuzzerPin6,784);
+      break;
      case 6:
-      tone(BuzzerPin6,740);
-      break;
-     case 7:
-      tone(BuzzerPin6,831);
-      break;
-     case 8:
       tone(BuzzerPin6,880);
       break;
-     case 9:
+     case 7:
       tone(BuzzerPin6,988);
       break;
+     case 8:
+      tone(BuzzerPin6,1047);
+      break;
+     case 9:
+      tone(BuzzerPin6,1174);
+      break;
      case 10:
-      tone(BuzzerPin6,1109);
-      break;
-     case 11:
-      tone(BuzzerPin6,1175);
-      break;
-     case 12:
       tone(BuzzerPin6,1319);
       break;
+     case 11:
+      tone(BuzzerPin6,1397);
+      break;
+     case 12:
+      tone(BuzzerPin6,1568);
+      break;
      case 13:
-      tone(BuzzerPin6,1480);
+      tone(BuzzerPin6,1760);
       break;
      case 14:
-      tone(BuzzerPin6,1661);
+      tone(BuzzerPin6,1976);
       break;
      default:
       noTone(BuzzerPin6);
