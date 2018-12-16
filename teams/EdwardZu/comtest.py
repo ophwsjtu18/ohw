@@ -1,6 +1,9 @@
 import serial
 import serial.tools.list_ports
 import time
+import urllib.request as request
+
+url = "http://172.20.10.12/num/index.html"
 
 print('hello')
 ports = list(serial.tools.list_ports.comports())
@@ -14,8 +17,24 @@ for p in ports:
     else:
         print("No Arduino Device was found connected to the computer")
 
-time.sleep(10)
-line = 
+
+def setup():
+    # 等待投石机setup
+    while True:
+        a = ser.readline()
+        b = a.decode("utf-8")
+        c = "Going to loop"
+        if c in b:
+            break
+
+
+def target():
+    # 爬一下树莓派返回网站的数据，非零即有异物
+    file = request.urlopen(url)
+    data = file.readline().decode("utf-8")
+    print("people:"+data)
+    return int(data)
+
 
 song = ['A', '1', '0', '0', ' ', '1', '0', '0']
 cmd1 = "A 30 20 90 0 0".split(' ')
@@ -26,16 +45,27 @@ print(cmds)
 count = 0
 
 while True:
+
+    # 若未发现生物，力度归零，不发射
+
+    time.sleep(1)
     cmd = cmds[count]
+
+    people = target()
+    if int(people) == 0:
+        cmd[2] = "0"
+        cmd[3] = "0"
+
     for i in cmd:
         print(i, end=' ')
         ser.write(i.encode())
         ser.write(" ".encode())
-    print ('\n')
+    print('\n')
 
-    time.sleep(10)
     count = count+1
     if count > 2:  # 大于等于3的时候归零
         count = 0
-    while ser.readline() != "OVER"
-        ;
+    a = ser.readline().decode("utf-8")
+    while not ("OVER" in a):
+        print(a)
+        a = ser.readline().decode("utf-8")
