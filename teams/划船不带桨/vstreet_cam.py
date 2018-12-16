@@ -343,11 +343,11 @@ def overlay_on_image(display_image, filtered_objects):
 
         delta_pixel = 15
         cmd_str = ""
-        if source_image_width*0.35<real_cx<0.65*source_image_width and source_image_height*0.35<real_cy< 0.65*source_image_height:
+        if source_image_width*0.35<real_cx<0.65*source_image_width and real_cy< 0.65*source_image_height:
             cmd_str = 'forward,'+str(real_cx)
-        elif real_cx<0.35*source_image_width and source_image_height*0.35<real_cy< 0.65*source_image_height:
+        elif real_cx<0.35*source_image_width and <real_cy< 0.65*source_image_height:
             cmd_str = 'right,'+str(real_cx)
-        elif source_image_width*0.65<real_cx<source_image_width and source_image_height*0.35<real_cy< 0.65*source_image_height:
+        elif source_image_width*0.65<real_cx and <real_cy< 0.65*source_image_height:
             cmd_str = 'left,'+str(real_cx)
         elif source_image_height*0.65<real_cy:
             cmd_str = 'back,'+str(real_cx)
