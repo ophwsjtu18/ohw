@@ -71,7 +71,7 @@ while True:
 
 
     people = target()
-    if people == 1:
+    if people >= 1:
         cmd[2] = "20"
         cmd[5] = "1"
 
