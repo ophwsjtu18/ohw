@@ -1,19 +1,19 @@
-# Raspberry Pi OpenCV Server
+# Wonderland 组
 
-## main.py
+## 小组成员
 
-Run on PC.
+胡赵宇
 
-Set the raspberry pi IP address in the script and get current objects in the webcam.
+何炳昌
 
-## server.py
+刘龙祥
 
-Run on Raspberry Pi. Put the script in `/home/pi/workspace/ncappzoo/apps/street_cam` folder.
+郭志
 
-A simple HTTP server to provide the webcam data.
+王中昊
 
-## vstreet_cam.py
+## 目录说明
 
-Run on Raspberry Pi. Put the script in the `/home/pi/workspace/ncappzoo/apps/street_cam` folder.
+`catapult-codes`: 投石机的 Arduino 代码及 Python 串口交互代码
 
-Kernel script to identify the objects in the webcam.
+`raspberry-opencv`: 树莓派使用神经计算棒分析摄像头采集的数据，并提供简单 HTTP 服务
