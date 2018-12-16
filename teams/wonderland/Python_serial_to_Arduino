@@ -1,0 +1,51 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Dec 16 11:59:29 2018
+
+@author: Administrator
+"""
+
+import serial
+import serial.tools.list_ports
+import time
+
+S_rectangle = 0
+f = open('music.csv','r')
+music_list = f.read().split('\n')
+distance_list = [0,25,50,75,100]
+"""
+print ('hello')
+ports = list(serial.tools.list_ports.comports())
+print (ports)
+"""
+
+ser = serial.Serial(port = "COM11")
+
+"""
+for p in ports:
+    print (p[1])
+    if "SERIAL" in p[1] or "UART" in p[1]:
+	    ser=serial.Serial(port=p[0])
+    else :
+	    print ("No Arduino Device was found connected to the computer")
+"""
+#ser=serial.Serial(port='COM4')
+#ser=serial.Serial(port='/dev/ttymodem542')
+#wait 2 seconds for arduino board restart
+time.sleep(2)
+
+def music(S_rectangle):
+    while(True):
+        for i in range(len(distance_list)):
+            if(S_rectangle<distance_list[i]):
+                selected_music = i-1
+                break
+        music_line = music_list[selected_music]
+        music_final = music_line.split(',')
+        for action in music_final:
+            ser.write((action+'a').encode())
+            time.sleep(0.25)
+
+for i in range(100):
+    S_rectangle = S_rectangle + 25
+    music(S_rectangle)
