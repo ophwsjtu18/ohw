@@ -16,7 +16,7 @@ for p in ports:
         print("No Arduino Device was found connected to the computer")
 
 while True:
-    instruct = input("a: controlled by camera.  b: fire a stone")
+    instruct = input("a: controlled by camera.  b: shoot a stone")
     if instruct == 'a':
         start = time.time()
         while True:
@@ -54,7 +54,6 @@ while True:
         page = response.read()
         page = page.decode('utf-8')
         raw_angle = page.split(',')[1]
-
         base_angle = str(raw_angle/6)
         arm_angle = '20'
         shoot_cmd = "A " + base_angle + " " + arm_angle + " 120 0 0 "
