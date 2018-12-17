@@ -1,4 +1,5 @@
 from mcpi.minecraft import Minecraft
+import mcpi.block as block
 import time
 import serial
 import serial.tools.list_ports
@@ -46,13 +47,16 @@ def maze_game(mc, period=60):
 
 def catapult_shoot(ser):
     _, raw_angle = get_cmd_info()
-    base_angle = str(raw_angle / 6)
-    arm_angle = '20'
-    shoot_cmd = "A " + base_angle + " " + arm_angle + " 120 0 0 "
-    ser.write(shoot_cmd.encode())
-    print(shoot_cmd)
-    print("Waiting for execution......")
-    time.sleep(20)
+    if raw_angle > 0:
+        base_angle = str(raw_angle / 6)
+        arm_angle = '20'
+        shoot_cmd = "A " + base_angle + " " + arm_angle + " 120 0 0 "
+        ser.write(shoot_cmd.encode())
+        print(shoot_cmd)
+        print("Waiting for execution......")
+        time.sleep(20)
+    else:
+        print("No people found")
 
 
 def check_points_per_step(mc):
@@ -81,17 +85,18 @@ def running_game(mc, period=60):
         points = points + check_points_per_step(mc)
         time.sleep(0.5)
         mc.postToChat("keep moving forward")
-        time_left = period - (time.time() - start)
-        if time_left < 0:
-            comments = "Time up, you have got " + str(points) + " points. GOOD JOB!"
+        duration = time.time() - start
+        if mc.getBlock(pos.x, pos.y-1, pos.z) == block.GLASS.id:
+            comments = "Finish! you have got " + str(points) + " points in " + str(duration[:5]) + " seconds. GOOD JOB!"
             print(comments)
             mc.postToChat(comments)
             break
         else:
-            comments = "You have " + str(time_left) + " seconds left. you have got " + str(points) + " points."
+            comments = "you have got " + str(points) + " points in " + str(duration[:5]) + " seconds."
             print(comments)
             mc.postToChat(comments)
-        mc.player.setTilePos(pos.x, pos.y, pos.z + 1)
+        if mc.getBlock(pos.x, pos.y, pos.z + 1) == 0:
+            mc.player.setTilePos(pos.x, pos.y, pos.z + 1)
         if pos_cmd == 'left':
             if mc.getBlock(pos.x + 1, pos.y, pos.z) == 0:
                 print("move left")
@@ -121,7 +126,7 @@ def main():
         elif instruct == 'b':
             catapult_shoot(ser=ser)
         elif instruct == 'c':
-            running_game(mc, period=60)
+            running_game(mc)
         elif instruct == 'q':
             break
 
