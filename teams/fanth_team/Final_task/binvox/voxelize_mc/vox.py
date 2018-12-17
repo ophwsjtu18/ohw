@@ -5,7 +5,7 @@ import mcpi.block as block
 mc=Minecraft.create()
 pos=mc.player.getTilePos()
 
-with open('fishcase.binvox', 'rb') as f:
+with open('spowers.binvox', 'rb') as f:
     model = binvox_rw.read_as_3d_array(f)
 print(model.dims)
 print(model.scale)

@@ -1,5 +1,5 @@
 // camera = <pos x> <pos y> <pos z> <lookat x> <lookat y> <lookat z> <up x> <up y> <up z>
-camera = 1.75539 0.585492 0.847958 0.476562 0.5 0.359375 0 1 0
+camera = 1.19623 1.50103 -0.154691 0.476562 0.402344 0.496094 0 1 0
 show_single_slice = 0
 slice_index = 64
 alternate_colours = 0

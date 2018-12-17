@@ -120,8 +120,8 @@ class house():
                 mc.setBlock(x0+x,y0+y,z0,89)
                 mc.setBlock(x0+x,y0+y,z0+10,89)
 
-mh1=house(pos.x+3,pos.z+3,pos.y)
+mh1=house([pos.x+3,pos.z+3,pos.y])
 mh1.buildwall()
 mh1.buildroof()
-mh1.buildwallwithdoor(
+mh1.buildwallwithdoor()
 mh1.buildwallwithwindow()
