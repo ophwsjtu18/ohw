@@ -76,7 +76,7 @@ def check_points_per_step(mc):
     return point_per_step
 
 
-def running_game(mc, period=60):
+def running_game(mc):
     start = time.time()
     points = 0
     while True:
@@ -120,13 +120,22 @@ def main():
         else:
             print("No Arduino Device was found connected to the computer")
     while True:
-        instruct = input("a: maze game.  b: shoot a stone  c: running man  q: quit")
+        instruct = input("a: Game in my world  b: Shoot a stone  q: quit")
         if instruct == 'a':
-            maze_game(mc, period=60)
+            home = [55, 51, 51]
+            run_pos = [91, 13, 524]
+            run_button = [53, 52, 57]
+            maze_pos = []
+            maze_button = [57, 52, 57]
+
+            mc.player.setTilePos(home[0], home[1], home[2])
+            if mc.getBlock(run_button[0], run_button[1], run_button[2]) == 41:
+                mc.player.setTilePos(run_pos[0], run_pos[2], run_pos[3])
+                running_game(mc)
+
+
         elif instruct == 'b':
             catapult_shoot(ser=ser)
-        elif instruct == 'c':
-            running_game(mc)
         elif instruct == 'q':
             break
 
