@@ -63,8 +63,8 @@ def check_points_per_step(mc):
     # check get or lose points every single step.
     # change block id here!
     good_id = 35
-    bad_id = 1
-    normal_id = 2
+    bad_id = 41
+    normal_id = 42
     pos = mc.player.getTilePos()
     point_per_step = 0
     if mc.getBlock(pos.x, pos.y-1, pos.z) == good_id:
@@ -87,12 +87,12 @@ def running_game(mc):
         mc.postToChat("keep moving forward")
         duration = time.time() - start
         if mc.getBlock(pos.x, pos.y-1, pos.z) == block.GLASS.id:
-            comments = "Finish! you have got " + str(points) + " points in " + str(duration[:5]) + " seconds. GOOD JOB!"
+            comments = "Finish! you have got " + str(points) + " points in " + str(duration)[:5] + " seconds. GOOD JOB!"
             print(comments)
             mc.postToChat(comments)
             break
         else:
-            comments = "you have got " + str(points) + " points in " + str(duration[:5]) + " seconds."
+            comments = "you have got " + str(points) + " points in " + str(duration)[:5] + " seconds."
             print(comments)
             mc.postToChat(comments)
         if mc.getBlock(pos.x, pos.y, pos.z + 1) == 0:
@@ -122,16 +122,18 @@ def main():
     while True:
         instruct = input("a: Game in my world  b: Shoot a stone  q: quit")
         if instruct == 'a':
-            home = [55, 51, 51]
+            home = [55, 52, 51]
             run_pos = [91, 13, 524]
             run_button = [53, 52, 57]
             maze_pos = []
             maze_button = [57, 52, 57]
 
             mc.player.setTilePos(home[0], home[1], home[2])
-            if mc.getBlock(run_button[0], run_button[1], run_button[2]) == 41:
-                mc.player.setTilePos(run_pos[0], run_pos[2], run_pos[3])
-                running_game(mc)
+            while True:
+                if mc.getBlock(run_button[0], run_button[1], run_button[2]) == 41:
+                    mc.player.setTilePos(run_pos[0], run_pos[1], run_pos[2])
+                    running_game(mc)
+                    break
 
 
         elif instruct == 'b':
