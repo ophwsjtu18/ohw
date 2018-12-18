@@ -351,7 +351,10 @@ def overlay_on_image(display_image, filtered_objects):
             cmd_str = 'left,'+str(real_cx)
         elif source_image_height*0.65<real_cy:
             cmd_str = 'back,'+str(real_cx)
-
+        else:
+            cmd_str = "no_box,-1"
+    with open("/var/www/html/cmd.html", 'w') as f:
+        f.write(cmd_str)
         '''
         if (0.5*np.fabs(real_cx-old_real_cx)) > np.fabs(real_cy-old_real_cy):
             if real_cx < (old_real_cx - delta_pixel):
@@ -372,8 +375,7 @@ def overlay_on_image(display_image, filtered_objects):
         old_box_bottom = max_box_bottom
         '''
 
-    with open("/var/www/html/cmd.html", 'w') as f:
-        f.write(cmd_str)
+
 
 
     # display text to let user know how to quit
