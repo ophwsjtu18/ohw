@@ -1,6 +1,6 @@
 #include<Servo.h>
-#define armOpen     140 
-#define armArmed    45
+#define armOpen     180 
+#define armArmed    120
 
 #define lockOpen    110 
 #define lockClosed  20 

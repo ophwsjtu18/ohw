@@ -46,7 +46,7 @@ while True:
     pos=mc.player.getTilePos()
     mc.postToChat("please goto home x=-30 y=-6 z=-40 for 15s to fly")
     mc.postToChat("x:"+str(pos.x)+"y:"+str(pos.y)+"z:"+str(pos.z))
-    if pos.x=30 and  pos.y=-6  and pos.z=-40 :
+    if pos.x==30 and  pos.y==-6  and pos.z==-40 :
         mc.postToChat("welcome home")
         stayed_time=stayed_time+1
         if stayed_time>=30:
