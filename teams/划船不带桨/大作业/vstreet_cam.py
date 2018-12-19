@@ -12,17 +12,6 @@ import time
 import os
 
 
-'''
-# old max bounding box
-old_real_cx = 0
-old_real_cy = 0
-old_box_left = 0
-old_box_right = 0
-old_box_top = 0
-old_box_bottom = 0
-'''
-
-
 # the networks compiled for NCS via ncsdk tools
 tiny_yolo_graph_file= './yolo_tiny.graph'
 googlenet_graph_file= './googlenet.graph'
@@ -342,7 +331,6 @@ def overlay_on_image(display_image, filtered_objects):
         real_cx, real_cy = (max_box_left+max_box_right)/2, (max_box_top+max_box_bottom)/2
 
         delta_pixel = 15
-        cmd_str = ""
         if source_image_width*0.35<real_cx<0.65*source_image_width and real_cy< 0.65*source_image_height:
             cmd_str = 'forward,'+str(real_cx)
         elif real_cx<0.35*source_image_width and real_cy< 0.65*source_image_height:
@@ -355,27 +343,6 @@ def overlay_on_image(display_image, filtered_objects):
             cmd_str = "no_box,-1"
     with open("/var/www/html/cmd.html", 'w') as f:
         f.write(cmd_str)
-        '''
-        if (0.5*np.fabs(real_cx-old_real_cx)) > np.fabs(real_cy-old_real_cy):
-            if real_cx < (old_real_cx - delta_pixel):
-                cmd_str = "left"
-            elif real_cx > (old_real_cx + delta_pixel):
-                cmd_str = "right"
-        else:
-            if real_cy < (old_real_cy - delta_pixel):
-                cmd_str = "up"
-            elif real_cy > (old_real_cy + delta_pixel):
-                cmd_str = "down"
-
-        old_real_cx = real_cx
-        old_real_cy = real_cy
-        old_box_left = max_box_left
-        old_box_right = max_box_right
-        old_box_top = max_box_top
-        old_box_bottom = max_box_bottom
-        '''
-
-
 
 
     # display text to let user know how to quit

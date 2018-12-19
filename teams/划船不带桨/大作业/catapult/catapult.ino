@@ -139,7 +139,7 @@ long mylist[] = {0, 0, 0, 0, 0};
 long cur;
 String item;
 long itemint;
-  
+
 void loop()
 {
   if(Serial.available() > 0)
