@@ -52,4 +52,4 @@ def manyhouse(x0,y0,z0,L,W,H,M,n):
 mc=Minecraft.create()
 pos=mc.player.getTilePos()
 while True:
-    clear(50)
+    clear(100)

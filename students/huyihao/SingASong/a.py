@@ -9,31 +9,34 @@ print (ports)
 for p in ports:
     print (p[1])
     if "SERIAL" in p[1] or "UART" in p[1]:
-	ser=serial.Serial(port=p[0])
+            ser=serial.Serial(port=p[0])
     else :
-	print ("No Arduino Device was found connected to the computer")
+            print ("No Arduino Device was found connected to the computer")
 
 #ser=serial.Serial(port='COM4')
 #ser=serial.Serial(port='/dev/ttymodem542')
 #wait 2 seconds for arduino board restart
 time.sleep(2)
+
 def media_play():
         f = open('songs.txt','r').read()
         all_songs = f.split('\n')
         songs = {}
         for a in all_songs[:-1]:
-                songs[a.split('=')[0]] = a.split('=')[1].split(',')
+                songs[a.split(' ')[0]] = a.split(' ')[1].split(',')
 
         action = "empty"
         while action != 'q':
                 print("welcome to hyh's player, press q to quit")
                 action = input("> ")
                 if action in songs:
-                        for b in songs:
-                                ser.write(char(b))
+                        for b in songs[action]:
+                                print(b)
+                                ser.write(b.encode())
                                 time.sleep(1) 
                 time.sleep(5)
-media_play
+                print("next")
+media_play()
                                 
         
 
@@ -45,4 +48,3 @@ media_play
 
 
 
-media_play()
