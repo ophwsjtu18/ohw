@@ -2,7 +2,6 @@ from mcpi.minecraft import Minecraft
 import mcpi.block as block
 
 
-
 def build_maze():
     mc = Minecraft.create()
     pos = mc.player.getTilePos()
@@ -28,12 +27,16 @@ def build_maze():
                 b = GAP
             else:
                 b = WALL
-            mc.setBlock(x, origin_y, z, b)
-            mc.setBlock(x, origin_y + 1, z, b)
-            mc.setBlock(x, origin_y - 1, z, FLOOR)
-            x = x + 1
-        z = z + 1
+            for i in range(2):
+                for j in range(2):
+                    mc.setBlock(x + i, origin_y, z + j, b)
+                    mc.setBlock(x + i, origin_y + 1, z + j, b)
+                    mc.setBlock(x + i, origin_y - 1, z + j, FLOOR)
+
+            x = x + 2
+        z = z + 2
 #build_maze()
+
 
 '''
 map_point = open('maze.csv', 'r').read().split('\n')

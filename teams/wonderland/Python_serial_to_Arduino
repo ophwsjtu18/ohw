@@ -1,0 +1,61 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Dec 18 19:54:17 2018
+
+@author: Administrator
+"""
+
+import requests, json
+import time
+import serial
+import serial.tools.list_ports
+
+S_rectangle = 0
+f = open('music.csv','r')
+music_list = f.read().split('\n')
+distance_list = [100,200]
+songs_list = ['天空之城（距离最远）','两只老虎（距离次远）','小星星（距离最近）']
+
+ports = list(serial.tools.list_ports.comports())
+print (ports)
+
+for p in ports:
+    print (p[1])
+    if "Arduino" in p[1]:
+	    ser=serial.Serial(port=p[0])
+    else :
+	    print ("No Arduino Device was found connected to the computer")
+time.sleep(2)
+
+while(True):
+    r = requests.get('http://172.20.10.2:9000/')
+    data = json.loads(r.content)
+    if 'person' in data:
+        number = 0
+        #print(data['person'])
+        selected_music = int(data['person'][0]['width']/100)%3
+        music_line = music_list[selected_music]
+        print('正在播放的歌曲是：' + songs_list[selected_music])
+        music_final = music_line.split(',')
+        counter = 0
+        for action in music_final:
+            if counter % 4 == 0:
+                try:
+                    r = requests.get('http://172.20.10.2:9000/')
+                    data = json.loads(r.content)
+                except:
+                    pass
+            if 'person' in data:
+                new_song = int(data['person'][0]['width']/100)%3
+                if(selected_music != new_song):
+                   number = number + 1
+                   if(number == 5):
+                       number = 0
+                       break
+            counter += 1
+            ser.write((action+'a').encode())
+            time.sleep(0.25)
+    else:
+        #print('No person found.')
+        ser.write(('20'+'a').encode())
+    time.sleep(1)
