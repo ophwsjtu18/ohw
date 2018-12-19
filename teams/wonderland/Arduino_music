@@ -3,6 +3,11 @@
 void setup()
 {
   Serial.begin(9600);
+  for(int j=2;j<9;j++)
+  {
+      if(j==6) continue;
+      pinMode(j,OUTPUT);
+   }
 }
 
 void loop()
@@ -11,72 +16,203 @@ void loop()
     switch (String(Serial.readStringUntil('a')).toInt()) {
       case -7:
       tone(BuzzerPin6,262);
+      for(int j=2;j<9;j++)
+     {
+         if(j==6) continue;
+         digitalWrite(j,LOW);
+      }
+      digitalWrite(2,HIGH);
       break;
       case -6:
       tone(BuzzerPin6,293);
+      for(int j=2;j<9;j++)
+     {
+         if(j==6) continue;
+         digitalWrite(j,LOW);
+      }
+      digitalWrite(3,HIGH);
       break;
      case -5:
       tone(BuzzerPin6,329);
+      for(int j=2;j<9;j++)
+     {
+         if(j==6) continue;
+         digitalWrite(j,LOW);
+      }
+      digitalWrite(4,HIGH);
       break;
      case -4:
       tone(BuzzerPin6,349);
+      for(int j=2;j<9;j++)
+     {
+         if(j==6) continue;
+         digitalWrite(j,LOW);
+      }
+      digitalWrite(5,HIGH);
       break;
      case -3:
       tone(BuzzerPin6,391);
+      for(int j=2;j<9;j++)
+     {
+         if(j==6) continue;
+         digitalWrite(j,LOW);
+      }
+      digitalWrite(7,HIGH);
       break;
      case -2:
       tone(BuzzerPin6,440);
+      for(int j=2;j<9;j++)
+     {
+         if(j==6) continue;
+         digitalWrite(j,LOW);
+      }
+      digitalWrite(8,HIGH);
       break;
      case -1:
       tone(BuzzerPin6,494);
+      for(int j=2;j<9;j++)
+     {
+         if(j==6) continue;
+         digitalWrite(j,LOW);
+      }
+      digitalWrite(9,HIGH);
       break;
      case 1:
       tone(BuzzerPin6,523);
+      for(int j=2;j<9;j++)
+     {
+         if(j==6) continue;
+         digitalWrite(j,LOW);
+      }
+      digitalWrite(2,HIGH);
       break;
       case 2:
       tone(BuzzerPin6,587);
+      for(int j=2;j<9;j++)
+     {
+         if(j==6) continue;
+         digitalWrite(j,LOW);
+      }
+      digitalWrite(3,HIGH);
       break;
      case 3:
       tone(BuzzerPin6,659);
+      for(int j=2;j<9;j++)
+     {
+         if(j==6) continue;
+         digitalWrite(j,LOW);
+      }
+      digitalWrite(4,HIGH);
       break;
      case 4:
       tone(BuzzerPin6,698);
+      for(int j=2;j<9;j++)
+     {
+         if(j==6) continue;
+         digitalWrite(j,LOW);
+      }
+      digitalWrite(5,HIGH);
       break;
      case 5:
       tone(BuzzerPin6,784);
+      for(int j=2;j<9;j++)
+     {
+         if(j==6) continue;
+         digitalWrite(j,LOW);
+      }
+      digitalWrite(7,HIGH);
       break;
      case 6:
       tone(BuzzerPin6,880);
+      for(int j=2;j<9;j++)
+     {
+         if(j==6) continue;
+         digitalWrite(j,LOW);
+      }
+      digitalWrite(8,HIGH);
       break;
      case 7:
       tone(BuzzerPin6,988);
+      for(int j=2;j<9;j++)
+     {
+         if(j==6) continue;
+         digitalWrite(j,LOW);
+      }
+      digitalWrite(9,HIGH);
       break;
      case 8:
       tone(BuzzerPin6,1047);
+      for(int j=2;j<9;j++)
+     {
+         if(j==6) continue;
+         digitalWrite(j,LOW);
+      }
+      digitalWrite(2,HIGH);
       break;
      case 9:
       tone(BuzzerPin6,1174);
+      for(int j=2;j<9;j++)
+     {
+         if(j==6) continue;
+         digitalWrite(j,LOW);
+      }
+      digitalWrite(3,HIGH);
       break;
      case 10:
       tone(BuzzerPin6,1319);
+      for(int j=2;j<9;j++)
+     {
+         if(j==6) continue;
+         digitalWrite(j,LOW);
+      }
+      digitalWrite(4,HIGH);
       break;
      case 11:
       tone(BuzzerPin6,1397);
+      for(int j=2;j<9;j++)
+     {
+         if(j==6) continue;
+         digitalWrite(j,LOW);
+      }
+      digitalWrite(5,HIGH);
       break;
      case 12:
       tone(BuzzerPin6,1568);
+      for(int j=2;j<9;j++)
+     {
+         if(j==6) continue;
+         digitalWrite(j,LOW);
+      }
+      digitalWrite(7,HIGH);
       break;
      case 13:
       tone(BuzzerPin6,1760);
+      for(int j=2;j<9;j++)
+     {
+         if(j==6) continue;
+         digitalWrite(j,LOW);
+      }
+      digitalWrite(8,HIGH);
       break;
      case 14:
       tone(BuzzerPin6,1976);
+      for(int j=2;j<9;j++)
+     {
+         if(j==6) continue;
+         digitalWrite(j,LOW);
+      }
+      digitalWrite(9,HIGH);
       break;
      case 15:
      for(int i=200;i<=800;i++)                    //用循环的方式将频率从200HZ 增加到800HZ
    {
    pinMode(6,OUTPUT);
-   tone(6,i);                            //在四号端口输出频率
+   tone(6,i);                        //在四号端口输出频率
+   for(int j=2;j<9;j++)
+     {
+         if(j==6) continue;
+         digitalWrite(j,HIGH);
+      }                         
    delay(5);                              //该频率维持5毫秒   
    }
    delay(2000);                            //最高频率下维持4秒钟
@@ -84,6 +220,11 @@ void loop()
   {
    pinMode(4,OUTPUT);
    tone(4,i);
+   for(int j=2;j<9;j++)
+     {
+         if(j==6) continue;
+         digitalWrite(j,HIGH);
+      }
    delay(5);
    }
    break;
