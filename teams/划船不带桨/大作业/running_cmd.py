@@ -5,8 +5,41 @@ import serial
 import serial.tools.list_ports
 from urllib import request
 
+def build_maze():
+    mc = Minecraft.create()
+    pos = mc.player.getTilePos()
 
-def get_cmd_info(ip="192.168.199.213"):
+    GAP = block.AIR.id
+    WALL = block.GOLD_BLOCK.id
+    FLOOR = block.GRASS.id
+
+    origin_x = 92
+    origin_y = 4
+    origin_z = 839
+
+    z = origin_z
+
+    f = open('maze.csv', 'r')
+    for line in f.readlines():
+        data = line.split(',')
+        #print(data)
+        x = origin_x
+        for cell in data:
+            #print(cell)
+            if cell == " " or cell == '+':
+                b = GAP
+            else:
+                b = WALL
+            for i in range(2):
+                for j in range(2):
+                    mc.setBlock(x + i, origin_y, z + j, b)
+                    mc.setBlock(x + i, origin_y + 1, z + j, b)
+                    mc.setBlock(x + i, origin_y - 1, z + j, FLOOR)
+
+            x = x + 2
+        z = z + 2
+
+def get_cmd_info(ip="192.168.43.162"):
     response = request.urlopen("http://" + ip + "/cmd.html")
     page = response.read()
     page = page.decode('utf-8')
@@ -17,12 +50,18 @@ def get_cmd_info(ip="192.168.199.213"):
 
 
 def maze_game(mc, period=60):
+    print("GameStart")
     start = time.time()
     while True:
         pos_cmd, _ = get_cmd_info()
         pos = mc.player.getTilePos()
         time.sleep(1)
+        if mc.getBlock(pos.x, pos.y-1, pos.z) == block.GLASS.id:
+            for i in range(100):
+                mc.postToChat("ntql")
+            break
         if (time.time() - start) > period:
+            mc.postToChat("Time is up")
             break
         if pos_cmd == 'forward':
             if mc.getBlock(pos.x, pos.y, pos.z + 1) == 0:
@@ -30,9 +69,10 @@ def maze_game(mc, period=60):
                 mc.postToChat("move forward")
                 mc.player.setTilePos(pos.x, pos.y, pos.z + 1)
         elif pos_cmd == 'back':
-            print("move backward")
-            mc.postToChat("move backward")
-            mc.player.setTilePos(pos.x, pos.y, pos.z - 1)
+            if mc.getBlock(pos.x, pos.y, pos.z - 1) == 0:
+                print("move backward")
+                mc.postToChat("move backward")
+                mc.player.setTilePos(pos.x, pos.y, pos.z - 1)
         elif pos_cmd == 'left':
             if mc.getBlock(pos.x + 1, pos.y, pos.z) == 0:
                 print("move left")
@@ -47,8 +87,8 @@ def maze_game(mc, period=60):
 
 def catapult_shoot(ser):
     _, raw_angle = get_cmd_info()
-    if raw_angle > 0:
-        base_angle = str(raw_angle / 6)
+    if float(raw_angle) > 0:
+        base_angle = str(150-float(raw_angle) / 3)
         arm_angle = '20'
         shoot_cmd = "A " + base_angle + " " + arm_angle + " 120 0 0 "
         ser.write(shoot_cmd.encode())
@@ -83,7 +123,7 @@ def running_game(mc):
         pos_cmd, _ = get_cmd_info()
         pos = mc.player.getTilePos()
         points = points + check_points_per_step(mc)
-        time.sleep(0.5)
+        time.sleep(0.8)
         mc.postToChat("keep moving forward")
         duration = time.time() - start
         if mc.getBlock(pos.x, pos.y-1, pos.z) == block.GLASS.id:
@@ -125,7 +165,7 @@ def main():
             home = [55, 52, 51]
             run_pos = [91, 13, 524]
             run_button = [53, 52, 57]
-            maze_pos = []
+            maze_pos = [95, 6, 838]
             maze_button = [57, 52, 57]
 
             mc.player.setTilePos(home[0], home[1], home[2])
@@ -133,6 +173,10 @@ def main():
                 if mc.getBlock(run_button[0], run_button[1], run_button[2]) == 41:
                     mc.player.setTilePos(run_pos[0], run_pos[1], run_pos[2])
                     running_game(mc)
+                    break
+                if mc.getBlock(maze_button[0], maze_button[1], maze_button[2]) == 41:
+                    mc.player.setTilePos(maze_pos[0], maze_pos[1], maze_pos[2])
+                    maze_game(mc,120)
                     break
 
 
